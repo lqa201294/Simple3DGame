@@ -3,13 +3,11 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\cha_data\Script\Healthplayer.cs">
     <Files>
       <File FileName="Assets\cha_data\Script\MovePlayer.cs" Line="1" Column="1" />
-      <File FileName="Assets\cha_data\Script\ManageEnemy.cs" Line="1" Column="1" />
+      <File FileName="Assets\cha_data\Script\ManageEnemy.cs" Line="42" Column="3" />
       <File FileName="Assets\cha_data\Script\PlayerAttack.cs" Line="1" Column="1" />
-      <File FileName="Assets\cha_data\Script\HpSmile.cs" Line="1" Column="1" />
-      <File FileName="Assets\CallSmileArea.cs" Line="1" Column="1" />
-      <File FileName="Assets\cha_data\Script\CameraFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets\cha_data\Script\MinimapFollow.cs" Line="1" Column="1" />
-      <File FileName="Assets\cha_data\Script\Healthplayer.cs" Line="104" Column="3" />
+      <File FileName="Assets\cha_data\Script\HpSmile.cs" Line="90" Column="15" />
+      <File FileName="Assets\cha_data\Script\SmileAttack.cs" Line="45" Column="55" />
+      <File FileName="Assets\cha_data\Script\Healthplayer.cs" Line="102" Column="78" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

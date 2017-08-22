@@ -38,6 +38,8 @@ public class ManageEnemy : MonoBehaviour {
 			CancelInvoke ();
 			CallBoss ();
 		}
+
+
 	
 	}
 

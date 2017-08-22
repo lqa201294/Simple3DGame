@@ -12,6 +12,8 @@ public class HpSmile : MonoBehaviour {
 	public GameObject DestroyParticle;
 	GameObject HPDisplay;
 	Image hpsmile;
+	Text showhp;
+
 	public Camera m_camera;
 	public GameObject Gate;
 
@@ -36,6 +38,8 @@ public class HpSmile : MonoBehaviour {
 
 		HPDisplay = transform.GetChild (2).gameObject;
 		hpsmile = HPDisplay.transform.GetChild (0).GetComponent<Image> ();
+		showhp = hpsmile.transform.GetChild (0).GetComponent<Text> ();
+
 
 		if (gameObject.tag == "enemy")
 		{
@@ -78,10 +82,12 @@ public class HpSmile : MonoBehaviour {
 		if (gameObject.tag == "Boss") 
 		{
 			hpsmile.fillAmount = CurrentSmileHP / BossSmileHP;
+			showhp.text = CurrentSmileHP + "/" + BossSmileHP; 
 		} 
 		else 
 		{
 			hpsmile.fillAmount = CurrentSmileHP / SmileDefaultHP;
+			showhp.text = CurrentSmileHP + "/" + SmileDefaultHP; 
 		}
 
 

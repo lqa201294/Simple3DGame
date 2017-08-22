@@ -15,7 +15,7 @@ public class Healthplayer : MonoBehaviour {
 	public Slider healthbar;
 	public GameObject HealthSkilParticle;
 	public Text StatusHP;
-	public Text GameOver;
+	public GameObject GameOver;
 
 	public SkillE castshield;
 	GameObject enemy;
@@ -96,10 +96,10 @@ public class Healthplayer : MonoBehaviour {
 	{
 		anim.SetTrigger ("Dead");
 
-		GameOver.enabled = true;
+		GameOver.SetActive (true);
 		Color startcolor = new Color (0,0,0,0);
 		Color endcolor = new Color (0,0,0,1);
-		GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor ,speedLerp* Time.deltaTime);
+		GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor , speedLerp* Time.deltaTime);
 
 
 	}

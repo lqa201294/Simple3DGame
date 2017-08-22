@@ -928,7 +928,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1867430159882134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.4, y: 0, z: 69.4}
+  m_LocalPosition: {x: 30, y: 0, z: 70}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4203919217117518}
@@ -1143,9 +1143,13 @@ MonoBehaviour:
   timedelay: 0
   maxtimedelay: 20
   healthrecover: 20
+  speedLerp: 15
   healthbar: {fileID: 0}
   HealthSkilParticle: {fileID: 1544285954345022, guid: b59c8ef9ea356404f912ec5b31911445,
     type: 2}
+  StatusHP: {fileID: 0}
+  GameOver: {fileID: 0}
+  castshield: {fileID: 0}
 --- !u!114 &114453292390219368
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1158,9 +1162,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MinimapCam: {fileID: 0}
-  speed: 12
+  speed: 15
+  xmin: 3
+  xmax: 497
+  zmin: 3
+  zmax: 497
   SpawnPoint: {fileID: 0}
-  distance: 0
+  AreaPos: {fileID: 0}
 --- !u!114 &114808896227490464
 MonoBehaviour:
   m_ObjectHideFlags: 1

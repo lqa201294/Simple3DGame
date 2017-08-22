@@ -42,6 +42,8 @@ public class SmileAttack : MonoBehaviour {
 		if (plhealth.curhealth <= 0) 
 		{
 			anim.SetTrigger ("playerDead");
+			player.GetComponent<MovePlayer> ().enabled = false;
+			player.GetComponent<PlayerAttack>().enabled = false;
 		}
 
 	
@@ -75,8 +77,7 @@ public class SmileAttack : MonoBehaviour {
 	{
 		anim.SetBool ("attack",inRange);
 		plhealth.takedamaged (attackDamage);
-
-
+	
 	}
 
 
