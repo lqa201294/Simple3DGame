@@ -11,13 +11,20 @@ public class MovePlayer : MonoBehaviour {
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 
+	Vector3 limitTranform;
+
 	bool turnleft;
 	bool turnright;
 	bool up;
 	bool down;
 
+	public float xmin;
+	public float xmax;
+	public float zmin;
+	public float zmax;
+
 	public GameObject SpawnPoint;
-	public float distance;
+	public GameObject AreaPos;
 
 	void Awake ()
 	{
@@ -25,6 +32,7 @@ public class MovePlayer : MonoBehaviour {
 		anim = GetComponent <Animator> ();
 		playerRigidbody = GetComponent <Rigidbody> ();
 	
+		limitTranform = gameObject.transform.position;
 	}
 
 
@@ -34,9 +42,14 @@ public class MovePlayer : MonoBehaviour {
 		// Store the input axes.
 		float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
 		float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-
+	
 		// Move the player around the scene.
 		Move (h, v);
+
+		limitTranform.x = Mathf.Clamp (transform.position.x, xmin, xmax);
+		limitTranform.z = Mathf.Clamp (transform.position.z ,zmin , zmax);
+
+		transform.position = limitTranform;
 
 		if (Input.GetKeyDown (KeyCode.Tab)) 
 		{
@@ -46,34 +59,33 @@ public class MovePlayer : MonoBehaviour {
 		{
 			MinimapCam.SetActive (false);
 		}
+			
 
 		if(Input.GetKey(KeyCode.LeftArrow))
 		{	
-			transform.eulerAngles = new Vector3 (0f, -90f, 0f);
+			transform.eulerAngles = new Vector3 (0, -90f, 0);
 
 		}
 		if (Input.GetKey (KeyCode.RightArrow)) 
 		{
-			transform.eulerAngles = new Vector3 (0f, 90f, 0f);
+			transform.eulerAngles = new Vector3 (0, 90f, 0);
 		}
 
 		if(Input.GetKey(KeyCode.UpArrow))
 		{
-			transform.eulerAngles = new Vector3 (0f, 0f, 0f);
+			transform.eulerAngles = new Vector3 (0,0, 0);
 		}
 
 		if(Input.GetKey(KeyCode.DownArrow))
 		{
-			
-			transform.eulerAngles = new Vector3 (0f, 180f, 0f);
+			transform.eulerAngles = new Vector3 (0, 180, 0);
 		}
 
-	
+
 		// Animate the player.
 		Animating (h, v);
 	}
-
-
+		
 
 	void Move (float h, float v)
 	{
@@ -95,5 +107,13 @@ public class MovePlayer : MonoBehaviour {
 
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.gameObject.tag == "Gate") 
+		{
+			transform.position = AreaPos.transform.GetChild (CallSmileArea.area).transform.position; 
+		}
 	}
 }

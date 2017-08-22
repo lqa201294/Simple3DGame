@@ -368,6 +368,8 @@ MonoBehaviour:
   CurrentSmileHP: 0
   DestroyParticle: {fileID: 1544285954345022, guid: b59c8ef9ea356404f912ec5b31911445,
     type: 2}
+  m_camera: {fileID: 0}
+  Gate: {fileID: 1869293925862556, guid: 055ef5dfc956f254c908ce7f484e89a6, type: 2}
 --- !u!135 &135632870834966012
 SphereCollider:
   m_ObjectHideFlags: 1

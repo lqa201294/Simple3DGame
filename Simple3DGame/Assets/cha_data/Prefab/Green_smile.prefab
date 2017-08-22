@@ -326,6 +326,7 @@ MonoBehaviour:
   DestroyParticle: {fileID: 1544285954345022, guid: b59c8ef9ea356404f912ec5b31911445,
     type: 2}
   m_camera: {fileID: 0}
+  Gate: {fileID: 1869293925862556, guid: 055ef5dfc956f254c908ce7f484e89a6, type: 2}
 --- !u!114 &114401704970156702
 MonoBehaviour:
   m_ObjectHideFlags: 1

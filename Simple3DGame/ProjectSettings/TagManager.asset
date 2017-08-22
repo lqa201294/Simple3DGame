@@ -11,6 +11,7 @@ TagManager:
   - Environment
   - skillE
   - Boss
+  - Gate
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Shootable
   - LightMask
   - Invisible
-  - 
+  - Player
   - 
   - 
   - 

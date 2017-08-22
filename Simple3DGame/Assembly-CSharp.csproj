@@ -46,6 +46,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\CallSmileArea.cs" />
      <Compile Include="Assets\cha_data\Script\CameraFollow.cs" />
      <Compile Include="Assets\cha_data\Script\DestroyParticle.cs" />
      <Compile Include="Assets\cha_data\Script\Healthplayer.cs" />

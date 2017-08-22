@@ -10,8 +10,13 @@ public class Healthplayer : MonoBehaviour {
 	public float maxtimedelay = 20f;
 	public float healthrecover = 20;
 
+	public float speedLerp = 3f;
+
 	public Slider healthbar;
 	public GameObject HealthSkilParticle;
+	public Text StatusHP;
+	public Text GameOver;
+
 	public SkillE castshield;
 	GameObject enemy;
 
@@ -26,6 +31,7 @@ public class Healthplayer : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 		healthbar.GetComponent<Slider> ().value = 1;
 
+		StatusHP.GetComponent<Text> ().text = "";
 	}
 
 	void Update()
@@ -40,8 +46,16 @@ public class Healthplayer : MonoBehaviour {
 		{
 			curhealth = startHealth;
 		}
+
+		if (curhealth < 0) 
+		{
+			curhealth = 0;
+		}
 			
 		healthbar.GetComponent<Slider> ().value = curhealth / startHealth;
+		StatusHP.GetComponent<Text> ().text = curhealth + "/" + startHealth;
+
+
 	}
 	
 
@@ -49,6 +63,7 @@ public class Healthplayer : MonoBehaviour {
 	{
 		curhealth -= amount;
 		anim.SetTrigger ("Damage");
+
 		if (curhealth <= 0) 
 		{
 			PlayerDead ();
@@ -80,6 +95,13 @@ public class Healthplayer : MonoBehaviour {
 	void PlayerDead()
 	{
 		anim.SetTrigger ("Dead");
+
+		GameOver.enabled = true;
+		Color startcolor = new Color (0,0,0,0);
+		Color endcolor = new Color (0,0,0,1);
+		GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor ,speedLerp* Time.deltaTime);
+
+
 	}
 
 	public void RecoverHealth(float amount)

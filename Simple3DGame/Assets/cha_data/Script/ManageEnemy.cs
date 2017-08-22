@@ -15,9 +15,6 @@ public class ManageEnemy : MonoBehaviour {
 	public Vector3 offset;
 	public Transform BossPos;
 
-	public GameObject Gate;
-
-	public bool callboss;
 
 	void Start ()
 	{
@@ -41,9 +38,7 @@ public class ManageEnemy : MonoBehaviour {
 			CancelInvoke ();
 			CallBoss ();
 		}
-
-
-
+	
 	}
 
 	void Spawn ()
@@ -69,17 +64,7 @@ public class ManageEnemy : MonoBehaviour {
 		go.transform.localScale *= 2f; 
 		go.gameObject.tag = "Boss";
 
-		StartCoroutine (Checkboss (go));
 	}
 
-	IEnumerator Checkboss(GameObject Boss)
-	{
-		
-		if(Boss == null)
-		{
-			Instantiate (Gate, Boss.transform.position, Quaternion.identity);
-		}
 
-		yield return new WaitForFixedUpdate ();
-	}
 }

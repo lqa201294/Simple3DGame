@@ -13,11 +13,14 @@ public class HpSmile : MonoBehaviour {
 	GameObject HPDisplay;
 	Image hpsmile;
 	public Camera m_camera;
+	public GameObject Gate;
 
-	bool clearArea;
+	public static bool clearArea;
 	bool isBoss;
 
 	Animator anim;
+
+	Vector3 StartPos;
 
 
 	void Awake()
@@ -29,6 +32,7 @@ public class HpSmile : MonoBehaviour {
 	void Start ()
 	{
 		anim = GetComponent<Animator> ();
+
 
 		HPDisplay = transform.GetChild (2).gameObject;
 		hpsmile = HPDisplay.transform.GetChild (0).GetComponent<Image> ();
@@ -42,6 +46,8 @@ public class HpSmile : MonoBehaviour {
 		else if (gameObject.tag == "Boss") 
 		{
 			isBoss = true;
+			StartPos = transform.position;
+
 			CurrentSmileHP = BossSmileHP;
 			gameObject.name = "Boss";
 			gameObject.GetComponent<NavMeshAgent> ().speed = 3;
@@ -64,6 +70,8 @@ public class HpSmile : MonoBehaviour {
 		if (CurrentSmileHP == 0 && clearArea == false) 
 		{
 			clearArea = true;
+			CallSmileArea.area++;
+
 			DestroyEffect ();
 		}
 
@@ -122,6 +130,9 @@ public class HpSmile : MonoBehaviour {
 		setting.startColor = Color.white;
 
 		Instantiate (DestroyParticle, transform.position, Quaternion.Euler(-90f,0f,0f));
+
+		Instantiate (Gate , StartPos, Quaternion.identity);
+
 		Destroy (gameObject);
 	}
 
