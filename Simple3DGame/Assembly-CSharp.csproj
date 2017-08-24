@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\cha_data\Script\CallSmileArea.cs" />
      <Compile Include="Assets\cha_data\Script\CameraFollow.cs" />
+     <Compile Include="Assets\cha_data\Script\Database\ReadJsonData.cs" />
      <Compile Include="Assets\cha_data\Script\DestroyParticle.cs" />
      <Compile Include="Assets\cha_data\Script\Healthplayer.cs" />
      <Compile Include="Assets\cha_data\Script\HpSmile.cs" />
@@ -89,6 +90,9 @@
  </Reference>
  <Reference Include="UnityEngine.VR">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
+ </Reference>
+ <Reference Include="LitJson">
+ <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/cha_data/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

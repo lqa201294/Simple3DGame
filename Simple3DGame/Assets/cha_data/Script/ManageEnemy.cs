@@ -8,13 +8,17 @@ public class ManageEnemy : MonoBehaviour {
 
 	public Healthplayer playerHealth;       // Reference to the player's heatlh.
 	public GameObject enemy;                // The enemy prefab to be spawned.
-	public float spawnTime = 1f;            // How long between each spawn.
+	      // How long between each spawn.
 	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
-	public int numsmile;
-	public int spawnPointIndex = 0;
 	public Vector3 offset;
 	public Transform BossPos;
 
+	public int numsmile;
+	public int spawnPointIndex = 0;
+	public float spawnTime = 1f;      
+	public int totalscore;
+
+	bool callboss;
 
 	void Start ()
 	{
@@ -22,6 +26,8 @@ public class ManageEnemy : MonoBehaviour {
 		InvokeRepeating ("Spawn", 0f, spawnTime);
 		numsmile = 0;
 	
+		callboss = false;
+		totalscore = 7 * spawnPoints.Length ;
 	}
 
 	void Update()
@@ -32,15 +38,18 @@ public class ManageEnemy : MonoBehaviour {
 			spawnPointIndex += 1;
 		}
 
-		if (spawnPointIndex >= spawnPoints.Length -1) 
+		if (spawnPointIndex > spawnPoints.Length -1) 
 		{
 			spawnPointIndex = 0;
 			CancelInvoke ();
-			CallBoss ();
 		}
 
-
-	
+		if (ScoreManage.Score == totalscore && callboss == false) 
+		{
+			callboss = true;
+			CallBoss ();
+		}
+			
 	}
 
 	void Spawn ()

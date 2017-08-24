@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class SmileAttack : MonoBehaviour {
 	public float timeperAttack = 1.5f;
-	public float attackDamage = 1;
-	public float BossAttack = 5;
+	public float attackDamage;
+	public float BossAttack;
 
 	float timer;
 	GameObject player;
@@ -28,6 +28,14 @@ public class SmileAttack : MonoBehaviour {
 			attackDamage = BossAttack;
 		}
 	}
+
+	void Start()
+	{
+		attackDamage = float.Parse (ReadJsonData.itemdata["Level"][CallSmileArea.area]["attackdame"].ToString());
+		BossAttack = 2 * attackDamage;
+
+	}
+
 	
 	// Update is called once per frame
 	void Update () 
@@ -46,6 +54,21 @@ public class SmileAttack : MonoBehaviour {
 			player.GetComponent<PlayerAttack>().enabled = false;
 		}
 
+		if (SkillE.absorbDamage) 
+		{
+			attackDamage = 0f;
+		}
+		else 
+		{
+			if (gameObject.tag == "enemy")
+			{
+				attackDamage = BossAttack/2;
+			}
+			else 
+			{
+				attackDamage = BossAttack;
+			}
+		}
 	
 	}
 

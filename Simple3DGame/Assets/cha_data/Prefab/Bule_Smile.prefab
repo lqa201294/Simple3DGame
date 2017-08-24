@@ -289,8 +289,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeperAttack: 1
-  attackDamage: 1
-  BossAttack: 5
+  attackDamage: 0
+  BossAttack: 0
   DestroyParticle: {fileID: 1544285954345022, guid: b59c8ef9ea356404f912ec5b31911445,
     type: 2}
 --- !u!114 &114116603136349606
@@ -365,7 +365,13 @@ MonoBehaviour:
   DestroyParticle: {fileID: 1544285954345022, guid: b59c8ef9ea356404f912ec5b31911445,
     type: 2}
   m_camera: {fileID: 0}
-  Gate: {fileID: 1869293925862556, guid: 055ef5dfc956f254c908ce7f484e89a6, type: 2}
+  Gate:
+  - {fileID: 159196, guid: 37e803394624a5c48ae5f13fd212ac0b, type: 2}
+  - {fileID: 173814, guid: 810eb771809ba56409dd29eab937ddb2, type: 2}
+  - {fileID: 194316, guid: 11387396ccd933544b0567a831ce751a, type: 2}
+  - {fileID: 168292, guid: 13755b5fbb6b69b4c81b942c6e32a512, type: 2}
+  - {fileID: 111946, guid: 3e142e58a407a7048856096aab4c9f5e, type: 2}
+  - {fileID: 119818, guid: 01f1e1f1177f76d499251acb5b14b63a, type: 2}
 --- !u!114 &114703229282078820
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -430,7 +436,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.3
+  m_Radius: 0.35
   m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!137 &137454457375808244
 SkinnedMeshRenderer:

@@ -7,13 +7,15 @@ public class SkillR : MonoBehaviour {
 	public Image displayCDtime;
 	public Text cdText;
 
+	public GameObject Player;
+	public GameObject skill;
 	public float cdtime;
 	public float maxcdtime = 60f;
-
 
 	// Use this for initialization
 	void Start () 
 	{
+
 		cdtime = 0f;	
 	}
 	
@@ -29,7 +31,6 @@ public class SkillR : MonoBehaviour {
 			if (cdtime <= 0) 
 			{
 				CastUltiMate ();
-
 			}
 		}
 
@@ -48,6 +49,8 @@ public class SkillR : MonoBehaviour {
 
 	void CastUltiMate()
 	{
+		
 		cdtime = maxcdtime;
+
 	}
 }

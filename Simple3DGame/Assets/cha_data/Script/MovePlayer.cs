@@ -60,7 +60,6 @@ public class MovePlayer : MonoBehaviour {
 			MinimapCam.SetActive (false);
 		}
 			
-
 		if(Input.GetKey(KeyCode.LeftArrow))
 		{	
 			transform.eulerAngles = new Vector3 (0, -90f, 0);
@@ -113,7 +112,16 @@ public class MovePlayer : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Gate") 
 		{
-			transform.position = AreaPos.transform.GetChild (CallSmileArea.area).transform.position; 
+			StartCoroutine (DestroyGate(col.gameObject,1f));
+
 		}
+	}
+
+	IEnumerator DestroyGate(GameObject Gate,float time)
+	{
+		yield return new WaitForSeconds (time);
+		transform.position = AreaPos.transform.GetChild (CallSmileArea.area).transform.position; 
+		yield return new WaitForSeconds (time);
+		Destroy (Gate);
 	}
 }

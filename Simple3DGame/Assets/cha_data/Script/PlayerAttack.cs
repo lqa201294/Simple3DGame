@@ -7,12 +7,13 @@ public class PlayerAttack : MonoBehaviour {
 	Animator anim;
 	bool attack;
 	bool colEnemy;
-	bool colBoss;
+
 
 	GameObject enemy;
-	GameObject Boss;
 	public GameObject slashLight;
 	public GameObject smileparticle;
+
+
 	Vector3 dir;
 
 	// Use this for initialization
@@ -41,13 +42,8 @@ public class PlayerAttack : MonoBehaviour {
 		if (attack && colEnemy && enemy!=null) 
 		{
 			colEnemy = false;
-			StartCoroutine (Flicker(enemy,3,0.1f));
-			enemy.GetComponent<SphereCollider> ().enabled = false;
-		}
+			enemy.GetComponent<HpSmile>().TakeDamage();
 
-		if (colBoss && attack && Boss !=null) 
-		{
-			Boss.GetComponent<HpSmile>().TakeDame();
 		}
 
 
@@ -55,7 +51,7 @@ public class PlayerAttack : MonoBehaviour {
 		
 	void OnTriggerEnter(Collider col)
 	{
-		if (col.gameObject.tag == "enemy" ) 
+		if (col.gameObject.tag == "enemy" || col.gameObject.tag == "Boss" ) 
 		{
 			dir = col.transform.position - transform.position;
 			if (Vector3.Dot (dir, transform.forward) > 0.3f) 
@@ -63,12 +59,6 @@ public class PlayerAttack : MonoBehaviour {
 				enemy = col.gameObject;
 				colEnemy = true;
 			}
-		}
-
-		if (col.gameObject.tag == "Boss") 
-		{
-			colBoss = true;
-			Boss = col.gameObject;
 		}
 
 
@@ -81,10 +71,6 @@ public class PlayerAttack : MonoBehaviour {
 			colEnemy = false;
 		}
 
-		if (col.gameObject.tag == "Boss") 
-		{
-			colBoss = false;
-		}
 	}
 
 	public void SlashEffectStart()
@@ -97,27 +83,5 @@ public class PlayerAttack : MonoBehaviour {
 		slashLight.SetActive (false);
 	}
 
-	IEnumerator Flicker(GameObject smile, float ntime, float time)
-	{
-		while (ntime > 0) 
-		{
-			smile.SetActive (false);
-			yield return new WaitForSeconds (time);
-			smile.SetActive (true);
-			yield return new WaitForSeconds (time);
-			ntime--;
 
-			if (ntime == 0) 
-			{
-				ScoreManage.Score += 1;
-				ParticleSystem.MainModule setting = smileparticle.GetComponent<ParticleSystem> ().main;
-				setting.startColor = Color.white;
-
-				Instantiate (smileparticle, enemy.transform.position, Quaternion.Euler(-90f,0f,0f));
-
-				Destroy (smile);
-			}
-		}
-
-	}
 }

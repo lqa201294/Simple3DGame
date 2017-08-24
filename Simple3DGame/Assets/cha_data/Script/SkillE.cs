@@ -14,7 +14,7 @@ public class SkillE : MonoBehaviour {
 	public GameObject Player;
 	public SmileAttack sAttack;
 
-	public bool absorbDamage;
+	public static bool absorbDamage;
 
 	// Use this for initialization
 	void Start () 

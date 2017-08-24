@@ -17,11 +17,7 @@ public class Healthplayer : MonoBehaviour {
 	public Text StatusHP;
 	public GameObject GameOver;
 
-	public SkillE castshield;
-	GameObject enemy;
-
 	Animator anim;
-
 
 	// Use this for initialization
 	void Awake ()
@@ -52,6 +48,7 @@ public class Healthplayer : MonoBehaviour {
 			curhealth = 0;
 		}
 			
+
 		healthbar.GetComponent<Slider> ().value = curhealth / startHealth;
 		StatusHP.GetComponent<Text> ().text = curhealth + "/" + startHealth;
 
@@ -71,27 +68,6 @@ public class Healthplayer : MonoBehaviour {
 	
 	}
 
-	void OnTriggerEnter(Collider col)
-	{
-		enemy = col.gameObject;
-
-		if (castshield.absorbDamage) 
-		{
-			enemy.GetComponent<SmileAttack>().attackDamage = 0f;
-		} 
-		else 
-		{
-			if (enemy.tag == "enemy") 
-			{
-				enemy.GetComponent<SmileAttack> ().attackDamage = 1f;
-			}
-			else if (enemy.tag == "Boss")
-			{
-				enemy.GetComponent<SmileAttack> ().attackDamage = 5f;
-			}
-		}
-	}
-
 	void PlayerDead()
 	{
 		anim.SetTrigger ("Dead");
@@ -109,7 +85,6 @@ public class Healthplayer : MonoBehaviour {
 		timedelay = maxtimedelay;
 		ParticleSystem.MainModule setting = HealthSkilParticle.GetComponent<ParticleSystem> ().main;
 		setting.startColor = Color.green;
-
 	
 		GameObject go = (GameObject)Instantiate (HealthSkilParticle, transform.position + new Vector3(0f,1f,0f), Quaternion.identity);
 		go.transform.SetParent (gameObject.transform);
@@ -118,6 +93,9 @@ public class Healthplayer : MonoBehaviour {
 
 		curhealth += amount;
 
-
 	}
+		
+
+
+
 }

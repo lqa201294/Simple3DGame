@@ -6,6 +6,7 @@ public class QSkill : MonoBehaviour {
 	public float speed = 2f;
 	Vector3 direction;
 	GameObject player;
+	public float offsetDir;
 
 	public GameObject destroyParticle;
 
@@ -18,13 +19,19 @@ public class QSkill : MonoBehaviour {
 	{
 		Destroy (gameObject, 2f);
 	
-		if (player.transform.eulerAngles.y == 0) {
+		if (player.transform.eulerAngles.y == 0)
+		{
 			direction = Vector3.forward;
-		} else if (player.transform.eulerAngles.y == 90) {
+		} 
+		else if (player.transform.eulerAngles.y == 90)
+		{
 			direction = Vector3.right;
-		} else if (player.transform.eulerAngles.y == 180) {
+		} 
+		else if (player.transform.eulerAngles.y == 180)
+		{
 			direction = Vector3.back;
-		} else if (player.transform.eulerAngles.y == 270) 
+		} 
+		else if (player.transform.eulerAngles.y == 270) 
 		{
 			direction = Vector3.left;
 		}
@@ -32,8 +39,7 @@ public class QSkill : MonoBehaviour {
 
 	void Update () 
 	{
-
-		transform.position += direction * speed * Time.deltaTime;
+			transform.position += direction * speed * Time.deltaTime;
 	}
 
 }

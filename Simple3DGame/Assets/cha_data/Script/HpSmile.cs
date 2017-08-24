@@ -5,8 +5,8 @@ using UnityEngine.AI;
 using UnityEngine.UI;
 
 public class HpSmile : MonoBehaviour {
-	public float SmileDefaultHP = 1f;
-	public float BossSmileHP = 10f;
+	public float SmileDefaultHP ;
+	public float BossSmileHP ;
 	public float CurrentSmileHP;
 
 	public GameObject DestroyParticle;
@@ -15,10 +15,9 @@ public class HpSmile : MonoBehaviour {
 	Text showhp;
 
 	public Camera m_camera;
-	public GameObject Gate;
+	public GameObject[] Gate;
 
 	public static bool clearArea;
-	bool isBoss;
 
 	Animator anim;
 
@@ -34,27 +33,28 @@ public class HpSmile : MonoBehaviour {
 	void Start ()
 	{
 		anim = GetComponent<Animator> ();
-
-
+	
 		HPDisplay = transform.GetChild (2).gameObject;
 		hpsmile = HPDisplay.transform.GetChild (0).GetComponent<Image> ();
 		showhp = hpsmile.transform.GetChild (0).GetComponent<Text> ();
 
+		SmileDefaultHP = float.Parse(ReadJsonData.itemdata ["Level"] [CallSmileArea.area]["Hp"].ToString());
+		BossSmileHP = 4 * SmileDefaultHP; 
 
 		if (gameObject.tag == "enemy")
 		{
-			isBoss = false;
+			
 			CurrentSmileHP = SmileDefaultHP;
 
 		} 
 		else if (gameObject.tag == "Boss") 
 		{
-			isBoss = true;
+			
 			StartPos = transform.position;
 
 			CurrentSmileHP = BossSmileHP;
 			gameObject.name = "Boss";
-			gameObject.GetComponent<NavMeshAgent> ().speed = 3;
+			gameObject.GetComponent<NavMeshAgent> ().speed = 4;
 		}
 		
 
@@ -73,10 +73,13 @@ public class HpSmile : MonoBehaviour {
 
 		if (CurrentSmileHP == 0 && clearArea == false) 
 		{
-			clearArea = true;
-			CallSmileArea.area++;
+			StartCoroutine (HitDamaged(gameObject.transform.GetChild(0).gameObject, 3, 0.1f));
 
-			DestroyEffect ();
+			if (gameObject.tag == "Boss") 
+			{
+				clearArea = true;
+				CallSmileArea.area++;
+			}
 		}
 
 		if (gameObject.tag == "Boss") 
@@ -98,15 +101,7 @@ public class HpSmile : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "QSkill") 
 		{
-			if (isBoss) 
-			{
-				CurrentSmileHP--;
-			}
-			else
-			{
-				StartCoroutine (HitDamaged(gameObject.transform.GetChild(0).gameObject, 3, 0.1f));
-			}
-
+			CurrentSmileHP--;
 		}
 	}
 
@@ -137,13 +132,13 @@ public class HpSmile : MonoBehaviour {
 
 		Instantiate (DestroyParticle, transform.position, Quaternion.Euler(-90f,0f,0f));
 
-		Instantiate (Gate , StartPos, Quaternion.identity);
+		Instantiate (Gate[Random.Range(0,5)] , StartPos, Quaternion.identity);
 
 		Destroy (gameObject);
 	}
 
 
-	public void TakeDame()
+	public void TakeDamage()
 	{
 		CurrentSmileHP--;
 		anim.SetTrigger ("damage");

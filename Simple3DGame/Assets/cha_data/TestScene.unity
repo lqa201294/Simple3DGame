@@ -210,15 +210,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1902913633}
   enemy: {fileID: 1601593063565200, guid: 226bfef5cd7791c4f8b51eceed63a514, type: 2}
-  spawnTime: 2
   spawnPoints:
   - {fileID: 442290087}
   - {fileID: 1003473780}
   - {fileID: 837472867}
-  numsmile: 0
-  spawnPointIndex: 0
   offset: {x: 0, y: 0, z: 0}
   BossPos: {fileID: 961267102}
+  numsmile: 0
+  spawnPointIndex: 0
+  spawnTime: 2
+  totalscore: 0
 --- !u!1 &60148920
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +253,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 70, y: 70}
+  m_SizeDelta: {x: 60, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &60148922
 MonoBehaviour:
@@ -673,8 +674,8 @@ Camera:
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0.019607844}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.6
-    y: 0.6
+    x: 0.65
+    y: 0.65
     width: 1
     height: 1
   near clip plane: 0.3
@@ -708,7 +709,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!1 &245373926
 GameObject:
@@ -888,7 +889,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 80}
+  m_SizeDelta: {x: 80, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &312219568
 MonoBehaviour:
@@ -1223,7 +1224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1902913633}
   enemy: {fileID: 1601593063565200, guid: 407b4cd60246b0541b007ec66dc0b79e, type: 2}
-  spawnTime: 1
   spawnPoints:
   - {fileID: 579665834}
   - {fileID: 1221927008}
@@ -1232,10 +1232,12 @@ MonoBehaviour:
   - {fileID: 1955533773}
   - {fileID: 1853724346}
   - {fileID: 224717336}
-  numsmile: 0
-  spawnPointIndex: 0
   offset: {x: 0, y: 0, z: 0}
   BossPos: {fileID: 1150739900}
+  numsmile: 0
+  spawnPointIndex: 0
+  spawnTime: 1
+  totalscore: 0
 --- !u!1 &455788847
 GameObject:
   m_ObjectHideFlags: 0
@@ -1904,7 +1906,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762323837
 MonoBehaviour:
@@ -1972,7 +1974,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &765406419
 MonoBehaviour:
@@ -2696,7 +2698,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4921864148397152, guid: 45ac4f781b7d823489ded11065452f87, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 114453292390219368, guid: 45ac4f781b7d823489ded11065452f87,
         type: 2}
@@ -2733,6 +2735,11 @@ Prefab:
       propertyPath: castshield
       value: 
       objectReference: {fileID: 2119800641}
+    - target: {fileID: 114452156829376268, guid: 45ac4f781b7d823489ded11065452f87,
+        type: 2}
+      propertyPath: speedLerp
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45ac4f781b7d823489ded11065452f87, type: 2}
   m_IsPrefabParent: 0
@@ -2932,7 +2939,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 80}
+  m_SizeDelta: {x: 80, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1557586021
 MonoBehaviour:
@@ -3192,7 +3199,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 80}
+  m_SizeDelta: {x: 80, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1676321789
 MonoBehaviour:
@@ -3259,6 +3266,7 @@ GameObject:
   - component: {fileID: 1677963322}
   - component: {fileID: 1677963321}
   - component: {fileID: 1677963326}
+  - component: {fileID: 1677963327}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3349,6 +3357,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 1902913629}
   smoothing: 5
+--- !u!114 &1677963327
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1677963320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3513303131e71da489100a390b392677, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1760397756
 GameObject:
   m_ObjectHideFlags: 0
@@ -3386,8 +3405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -250}
-  m_SizeDelta: {x: -400, y: -500}
+  m_AnchoredPosition: {x: 0, y: -255}
+  m_SizeDelta: {x: -444, y: -510}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1760397758
 MonoBehaviour:
@@ -3473,16 +3492,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1902913633}
   enemy: {fileID: 1601593063565200, guid: 391e937dd5f755b47a285898192e5b81, type: 2}
-  spawnTime: 2
   spawnPoints:
   - {fileID: 1934652114}
   - {fileID: 135797807}
   - {fileID: 332646947}
   - {fileID: 455788848}
-  numsmile: 0
-  spawnPointIndex: 0
   offset: {x: 0, y: 0, z: 0}
   BossPos: {fileID: 1655302160}
+  numsmile: 0
+  spawnPointIndex: 0
+  spawnTime: 2
+  totalscore: 0
 --- !u!4 &1775389746
 Transform:
   m_ObjectHideFlags: 0
@@ -3533,8 +3553,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -6.000025}
-  m_SizeDelta: {x: 90, y: 65}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 70, y: 60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1780806448
 MonoBehaviour:
@@ -3807,7 +3827,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 1902913633}
   enemy: {fileID: 1601593063565200, guid: 5862d59a5f3c47d49912096da4da4e55, type: 2}
-  spawnTime: 2
   spawnPoints:
   - {fileID: 1279081760}
   - {fileID: 46020940}
@@ -3815,10 +3834,12 @@ MonoBehaviour:
   - {fileID: 47327664}
   - {fileID: 337832158}
   - {fileID: 0}
-  numsmile: 0
-  spawnPointIndex: 0
   offset: {x: 0, y: 0, z: 0}
   BossPos: {fileID: 1943694574}
+  numsmile: 0
+  spawnPointIndex: 0
+  spawnTime: 2
+  totalscore: 0
 --- !u!4 &1988565324
 Transform:
   m_ObjectHideFlags: 0
@@ -3949,7 +3970,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 90, y: 80}
+  m_SizeDelta: {x: 80, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2119800639
 MonoBehaviour:
@@ -4002,4 +4023,3 @@ MonoBehaviour:
   Shield: {fileID: 1219886620574972, guid: b2a5d3f2afd02654db6569e521a1e815, type: 2}
   Player: {fileID: 1361154910}
   sAttack: {fileID: 114108123317747602, guid: 407b4cd60246b0541b007ec66dc0b79e, type: 2}
-  absorbDamage: 0
