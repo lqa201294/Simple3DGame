@@ -1,0 +1,776 @@
+fileFormatVersion: 2
+guid: 90eef6b825cf70f4baf45c6e4c0fa114
+timeCreated: 1503628905
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: PotionIcons_0
+    21300002: PotionIcons_1
+    21300004: PotionIcons_2
+    21300006: PotionIcons_3
+    21300008: PotionIcons_4
+    21300010: PotionIcons_5
+    21300012: PotionIcons_6
+    21300014: PotionIcons_7
+    21300016: PotionIcons_8
+    21300018: PotionIcons_9
+    21300020: PotionIcons_10
+    21300022: PotionIcons_11
+    21300024: PotionIcons_12
+    21300026: PotionIcons_13
+    21300028: PotionIcons_14
+    21300030: PotionIcons_15
+    21300032: PotionIcons_16
+    21300034: PotionIcons_17
+    21300036: PotionIcons_18
+    21300038: PotionIcons_19
+    21300040: PotionIcons_20
+    21300042: PotionIcons_21
+    21300044: PotionIcons_22
+    21300046: PotionIcons_23
+    21300048: PotionIcons_24
+    21300050: PotionIcons_25
+    21300052: PotionIcons_26
+    21300054: PotionIcons_27
+    21300056: PotionIcons_28
+    21300058: PotionIcons_29
+    21300060: PotionIcons_30
+    21300062: PotionIcons_31
+    21300064: PotionIcons_32
+    21300066: PotionIcons_33
+    21300068: PotionIcons_34
+    21300070: PotionIcons_35
+    21300072: PotionIcons_36
+    21300074: PotionIcons_37
+    21300076: PotionIcons_38
+    21300078: PotionIcons_39
+    21300080: PotionIcons_40
+    21300082: PotionIcons_41
+    21300084: PotionIcons_42
+    21300086: PotionIcons_43
+    21300088: PotionIcons_44
+    21300090: PotionIcons_45
+    21300092: PotionIcons_46
+    21300094: PotionIcons_47
+    21300096: PotionIcons_48
+    21300098: PotionIcons_49
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PotionIcons_0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 854
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_1
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 854
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_2
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 854
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_3
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 854
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_4
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 852
+        width: 173
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_5
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 854
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_6
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 854
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_7
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 852
+        width: 175
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_8
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 854
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_9
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 854
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_10
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 668
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_11
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 668
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_12
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 668
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_13
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 668
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_14
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 668
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_15
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 668
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_16
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 668
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_17
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 668
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_18
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 668
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_19
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 668
+        width: 174
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_20
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 476
+        width: 173
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_21
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 478
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_22
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 476
+        width: 172
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_23
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 478
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_24
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 478
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_25
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 478
+        width: 172
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_26
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 476
+        width: 173
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_27
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 478
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_28
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 478
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_29
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 476
+        width: 174
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_30
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 293
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_31
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 293
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_32
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 293
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_33
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 293
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_34
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 293
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_35
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 293
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_36
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 293
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_37
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 293
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_38
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 292
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_39
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 292
+        width: 172
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_40
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 103
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_41
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 103
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_42
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 103
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_43
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 103
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_44
+      rect:
+        serializedVersion: 2
+        x: 779
+        y: 103
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_45
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 103
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_46
+      rect:
+        serializedVersion: 2
+        x: 1163
+        y: 103
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_47
+      rect:
+        serializedVersion: 2
+        x: 1354
+        y: 103
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_48
+      rect:
+        serializedVersion: 2
+        x: 1546
+        y: 103
+        width: 173
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: PotionIcons_49
+      rect:
+        serializedVersion: 2
+        x: 1738
+        y: 103
+        width: 172
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

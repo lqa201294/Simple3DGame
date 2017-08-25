@@ -46,30 +46,30 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\cha_data\Script\CallSmileArea.cs" />
-     <Compile Include="Assets\cha_data\Script\CameraFollow.cs" />
-     <Compile Include="Assets\cha_data\Script\Database\ReadJsonData.cs" />
-     <Compile Include="Assets\cha_data\Script\DestroyParticle.cs" />
-     <Compile Include="Assets\cha_data\Script\Healthplayer.cs" />
-     <Compile Include="Assets\cha_data\Script\HpSmile.cs" />
-     <Compile Include="Assets\cha_data\Script\LimitMinimapCam.cs" />
-     <Compile Include="Assets\cha_data\Script\ManageEnemy.cs" />
-     <Compile Include="Assets\cha_data\Script\MinimapFollow.cs" />
-     <Compile Include="Assets\cha_data\Script\MovePlayer.cs" />
-     <Compile Include="Assets\cha_data\Script\PlayerAttack.cs" />
-     <Compile Include="Assets\cha_data\Script\QSkill.cs" />
-     <Compile Include="Assets\cha_data\Script\ScoreManage.cs" />
-     <Compile Include="Assets\cha_data\Script\ScreenShot.cs" />
-     <Compile Include="Assets\cha_data\Script\ShieldDuration.cs" />
-     <Compile Include="Assets\cha_data\Script\SkillE.cs" />
-     <Compile Include="Assets\cha_data\Script\SkillQ.cs" />
-     <Compile Include="Assets\cha_data\Script\SkillR.cs" />
-     <Compile Include="Assets\cha_data\Script\SkillW.cs" />
-     <Compile Include="Assets\cha_data\Script\SmileAttack.cs" />
-     <Compile Include="Assets\cha_data\Script\SmileMove.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Camera\CameraFollow.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Camera\LimitMinimapCam.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Camera\MinimapFollow.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Camera\ScreenShot.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Database\ReadJsonData.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\CallSmileArea.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\HpSmile.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\ManageEnemy.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\SmileAttack.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\SmileMove.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreManage.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\Healthplayer.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\ManaPlayer.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\MovePlayer.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\PlayerAttack.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\DestroyParticle.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\ESkill.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\ShieldDuration.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\SkillC.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\SkillV.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\SkillX.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\SkillZ.cs" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
@@ -92,7 +92,7 @@
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnityVR/RuntimeEditor/UnityEngine.VR.dll</HintPath>
  </Reference>
  <Reference Include="LitJson">
- <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/cha_data/LitJson.dll</HintPath>
+ <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/RPG_Game/LitJson.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

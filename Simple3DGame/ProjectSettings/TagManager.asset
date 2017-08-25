@@ -7,11 +7,14 @@ TagManager:
   - enemy
   - tree
   - shield
-  - QSkill
   - Environment
   - skillE
   - Boss
   - Gate
+  - Eskill
+  - Coin
+  - HpPotion
+  - MpPotion
   layers:
   - Default
   - TransparentFX
