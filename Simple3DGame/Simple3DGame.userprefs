@@ -1,8 +1,12 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RPG_Game\Script\Enemy\HpSmile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\RPG_Game\Script\Enemy\ManageEnemy.cs">
     <Files>
-      <File FileName="Assets\RPG_Game\Script\Enemy\HpSmile.cs" Line="131" Column="21" />
+      <File FileName="Assets\RPG_Game\Script\Enemy\DemonAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets\RPG_Game\Script\Enemy\HpDemon.cs" Line="1" Column="1" />
+      <File FileName="Assets\RPG_Game\Script\Enemy\SmileAttack.cs" Line="1" Column="1" />
+      <File FileName="Assets\RPG_Game\Script\Enemy\DemonMove.cs" Line="1" Column="1" />
+      <File FileName="Assets\RPG_Game\Script\Enemy\ManageEnemy.cs" Line="87" Column="43" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

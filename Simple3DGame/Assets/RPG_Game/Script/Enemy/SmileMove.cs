@@ -24,7 +24,7 @@ public class SmileMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
-		distance = Vector3.Distance (transform.position, player.transform.position);
+		distance = Vector3.Distance (transform.position, player.position);
 
 		if (healthpl.curhealth > 0 && distance < 30f ) 
 		{
@@ -32,9 +32,5 @@ public class SmileMove : MonoBehaviour {
 			
 		}
 
-		else
-		{
-			nav.SetDestination (transform.position);
-		}
 	}
 }

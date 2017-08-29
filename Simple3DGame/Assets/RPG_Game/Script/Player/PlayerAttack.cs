@@ -7,9 +7,13 @@ public class PlayerAttack : MonoBehaviour {
 	Animator anim;
 	bool attack;
 	bool colEnemy;
+	bool colsubboss;
 
+	public float Plattackdame;
 
 	GameObject enemy;
+	GameObject subBoss;
+
 	public GameObject slashLight;
 	public GameObject smileparticle;
 
@@ -19,6 +23,8 @@ public class PlayerAttack : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		anim = GetComponent<Animator> ();
+
+		Plattackdame = float.Parse (ReadJsonData.itemdata["Level"][CallSmileArea.area]["attackdame"].ToString());
 
 	}
 	
@@ -42,10 +48,16 @@ public class PlayerAttack : MonoBehaviour {
 		if (attack && colEnemy && enemy!=null) 
 		{
 			colEnemy = false;
-			enemy.GetComponent<HpSmile>().TakeDamage();
+			enemy.GetComponent<HpSmile>().TakeDamage(Plattackdame);
 
 		}
 
+		if (attack && colsubboss && subBoss!=null) 
+		{
+			colsubboss = false;
+			subBoss.GetComponent<HpDemon>().GetDamage(Plattackdame);
+		
+		}
 
 	}
 		
@@ -61,6 +73,17 @@ public class PlayerAttack : MonoBehaviour {
 			}
 		}
 
+		if (col.gameObject.tag == "subBoss") 
+		{
+			dir = col.transform.position - transform.position;
+			if (Vector3.Dot (dir, transform.forward) > 0.3f) 
+			{
+				subBoss = col.gameObject;
+				colsubboss = true;
+
+			}
+		
+		}
 
 	}
 
@@ -71,6 +94,10 @@ public class PlayerAttack : MonoBehaviour {
 			colEnemy = false;
 		}
 
+		if (col.gameObject.tag == "subBoss") 
+		{
+			colsubboss = false;
+		}
 	}
 
 	public void SlashEffectStart()

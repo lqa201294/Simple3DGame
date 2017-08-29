@@ -18,6 +18,9 @@ public class HpSmile : MonoBehaviour {
 	public GameObject DestroyParticle;
 	GameObject HPDisplay;
 	public GameObject[] PotionOrCoin;
+	int[] DropItem;
+
+	float getdamage;
 
 	public static bool clearArea;
 
@@ -25,7 +28,7 @@ public class HpSmile : MonoBehaviour {
 	void Awake()
 	{
 		m_camera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
-
+		DropItem = new int[10];
 	}
 
 	// Use this for initialization
@@ -68,7 +71,7 @@ public class HpSmile : MonoBehaviour {
 		}
 
 
-		if (CurrentSmileHP == 0 && clearArea == false) 
+		if (CurrentSmileHP <= 0 && clearArea == false) 
 		{
 			StartCoroutine (HitDamaged(gameObject.transform.GetChild(0).gameObject, 3, 0.1f));
 
@@ -98,7 +101,7 @@ public class HpSmile : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Eskill") 
 		{
-			CurrentSmileHP--;
+			CurrentSmileHP -= 2 * getdamage;
 		}
 	}
 
@@ -124,13 +127,19 @@ public class HpSmile : MonoBehaviour {
 	void DestroyEffect()
 	{
 		ScoreManage.Score += 1;
+		int rateDrop = Random.Range (0, DropItem.Length);
+
 		ParticleSystem.MainModule setting = DestroyParticle.GetComponent<ParticleSystem> ().main;
 		setting.startColor = Color.white;
 
 		Instantiate (DestroyParticle, transform.position, Quaternion.Euler(-90f,0f,0f));
-		Instantiate (PotionOrCoin[Random.Range(0, PotionOrCoin.Length)], 
-			transform.position + new Vector3(0f,.5f,0f), Quaternion.identity);
 
+		if (rateDrop > 5) 
+		{
+			Instantiate (PotionOrCoin[Random.Range (0, PotionOrCoin.Length)], 
+				transform.position + new Vector3(0f,.5f,0f), Quaternion.identity);
+		}
+			
 		if (gameObject.tag == "Boss") 
 		{
 			Instantiate (Gate[Random.Range(0,5)] , transform.position + new Vector3(0f,1f,0f), Quaternion.Euler(-90f,0f,0f));
@@ -141,9 +150,10 @@ public class HpSmile : MonoBehaviour {
 	}
 
 
-	public void TakeDamage()
+	public void TakeDamage(float amount)
 	{
-		CurrentSmileHP--;
+		getdamage = amount;
+		CurrentSmileHP -= amount;
 		anim.SetTrigger ("damage");
 	}
 }

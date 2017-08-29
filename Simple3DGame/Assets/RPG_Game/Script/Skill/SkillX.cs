@@ -65,11 +65,11 @@ public class SkillX : MonoBehaviour {
 		Player.GetComponent<ManaPlayer> ().ManaRecover (Manarecover);
 	}
 
-	public void GetHpPotion()
+	public void GetMpPotion(int numpotion)
 	{
 		if (DefaultManaPotion < MaxGetPotion) 
 		{
-			DefaultManaPotion++;
+			DefaultManaPotion +=numpotion;
 		}
 
 		numberPotion.text = "x" + DefaultManaPotion.ToString ();

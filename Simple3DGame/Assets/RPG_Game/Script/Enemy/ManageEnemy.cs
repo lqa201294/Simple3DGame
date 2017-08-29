@@ -6,10 +6,10 @@ using UnityEngine.UI;
 
 public class ManageEnemy : MonoBehaviour {
 
-	public Healthplayer playerHealth;       // Reference to the player's heatlh.
-	public GameObject enemy;                // The enemy prefab to be spawned.
-	      // How long between each spawn.
-	public Transform[] spawnPoints;         // An array of the spawn points this enemy can spawn from.
+	public Healthplayer playerHealth;       
+	public GameObject enemy;                
+
+	public Transform[] spawnPoints;         
 	public Vector3 offset;
 	public Transform BossPos;
 
@@ -18,7 +18,13 @@ public class ManageEnemy : MonoBehaviour {
 	public float spawnTime = 1f;      
 	public int totalscore;
 
+	public GameObject Demon;
+	public GameObject Gate;
+	public Transform subBossPos;
+
+
 	bool callboss;
+	bool callsubboss;
 
 	void Start ()
 	{
@@ -49,6 +55,13 @@ public class ManageEnemy : MonoBehaviour {
 			callboss = true;
 			CallBoss ();
 		}
+
+		if (ScoreManage.Score >= totalscore / 2 && callsubboss == false) 
+		{
+			callsubboss = true;
+			CallDemon ();
+
+		}
 			
 	}
 
@@ -68,6 +81,11 @@ public class ManageEnemy : MonoBehaviour {
 
 	}
 
+	void CallDemon ()
+	{
+		Gate.SetActive (true);
+		Instantiate (Demon , subBossPos.position, Quaternion.identity);
+	}
 
 	void CallBoss()
 	{

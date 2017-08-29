@@ -64,11 +64,11 @@ public class SkillZ : MonoBehaviour {
 		Player.GetComponent<Healthplayer> ().RecoverHealth (hprecover);
 	}
 
-	public void GetHpPotion()
+	public void GetHpPotion(int numpotion)
 	{
 		if (DefaultHpPotion < MaxGetPotion) 
 		{
-			DefaultHpPotion++;
+			DefaultHpPotion +=numpotion;
 		}
 
 		numberPotion.text = "x" + DefaultHpPotion.ToString ();
@@ -79,4 +79,5 @@ public class SkillZ : MonoBehaviour {
 		yield return new WaitForSeconds (time);
 		Notify.SetActive (false);
 	}
+
 }

@@ -12,9 +12,11 @@ TagManager:
   - Boss
   - Gate
   - Eskill
-  - Coin
   - HpPotion
   - MpPotion
+  - Coin
+  - subBoss
+  - subGate
   layers:
   - Default
   - TransparentFX
@@ -29,8 +31,8 @@ TagManager:
   - LightMask
   - Invisible
   - Player
-  - 
-  - 
+  - area
+  - item
   - 
   - 
   - 

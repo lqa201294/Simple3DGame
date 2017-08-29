@@ -46,30 +46,42 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\RPG_Game\Script\Camera\CameraFaceBillBoard.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\LimitMinimapCam.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\MinimapFollow.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\ScreenShot.cs" />
      <Compile Include="Assets\RPG_Game\Script\Database\ReadJsonData.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\CallSmileArea.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\DemonAttack.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\DemonMove.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Enemy\HpDemon.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\HpSmile.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\ManageEnemy.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\SmileAttack.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\SmileMove.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\GoldManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreManage.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\GetItem.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\Healthplayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\ManaPlayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\MovePlayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\PlayerAttack.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\DestroyParticle.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\ESkill.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\ItemCoin.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\ShieldDuration.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillC.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillV.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillX.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillZ.cs" />
+     <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
+     <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+     <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

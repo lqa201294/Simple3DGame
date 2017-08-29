@@ -8,6 +8,7 @@ public class ManaPlayer : MonoBehaviour {
 	public float curMana ;
 
 	public GameObject ManaStatus;
+	public GameObject ManaRecoverParticle;
 	public Text curstatus;
 
 	// Use this for initialization
@@ -29,6 +30,14 @@ public class ManaPlayer : MonoBehaviour {
 	}
 	public void ManaRecover(float amount)
 	{
+		ParticleSystem.MainModule setting = ManaRecoverParticle.GetComponent<ParticleSystem> ().main;
+		setting.startColor = Color.blue + new Color(.5f,.5f, 0f,0f);
+
+		GameObject go = (GameObject)Instantiate (ManaRecoverParticle, transform.position + new Vector3(0f,1f,0f), Quaternion.identity);
+		go.transform.SetParent (gameObject.transform);
+		go.transform.eulerAngles = new Vector3 (-90f,0f,0f);
+		go.transform.localScale = new Vector3 (5f,5f,5f);
 		curMana += amount;
+
 	}
 }

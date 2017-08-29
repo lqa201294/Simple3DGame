@@ -47,8 +47,13 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\RPG_Game\Script\Player\CharaView.js" />
+     <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
      <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
      <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
+     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
+     <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
+     <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

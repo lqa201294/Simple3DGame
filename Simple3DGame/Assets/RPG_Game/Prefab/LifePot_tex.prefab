@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 33000013121966850}
   - component: {fileID: 23000011014207464}
   - component: {fileID: 136740479682305266}
-  m_Layer: 0
+  m_Layer: 14
   m_Name: LifePot_tex
   m_TagString: HpPotion
   m_Icon: {fileID: 0}
