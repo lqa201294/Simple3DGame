@@ -38,7 +38,7 @@ public class SkillC : MonoBehaviour {
 			
 		if (Input.GetKeyDown (KeyCode.C)) 
 		{
-			if (Cdtime <= 0 && manaCost < Player.GetComponent<ManaPlayer> ().curMana) 
+			if (Cdtime <= 0 && manaCost <= Player.GetComponent<ManaPlayer> ().curMana) 
 			{
 				CastSkillE ();
 			} 

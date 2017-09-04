@@ -49,8 +49,6 @@
      <Compile Include="Assets\RPG_Game\Script\Camera\CameraFaceBillBoard.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\LimitMinimapCam.cs" />
-     <Compile Include="Assets\RPG_Game\Script\Camera\MinimapFollow.cs" />
-     <Compile Include="Assets\RPG_Game\Script\Camera\ScreenShot.cs" />
      <Compile Include="Assets\RPG_Game\Script\Database\ReadJsonData.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\CallSmileArea.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\DemonAttack.cs" />
@@ -62,24 +60,28 @@
      <Compile Include="Assets\RPG_Game\Script\Enemy\SmileMove.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\GoldManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreManage.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\SetNamePlayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\GetItem.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\Healthplayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\ManaPlayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\MovePlayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\PlayerAttack.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Player\SetCharName.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Shop\ApplyBuy.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Shop\BuyItem.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Shop\NotifyBuy.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\DestroyParticle.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\ESkill.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\ItemCoin.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\ItemEffect.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\ShieldDuration.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillC.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillV.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillX.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillZ.cs" />
      <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\Readme.txt" />
      <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
      <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
      <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEngine.UI">
@@ -106,12 +108,6 @@
  <Reference Include="LitJson">
  <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/RPG_Game/LitJson.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{09DACF68-8F75-457A-0E10-8E2E9BD23D49}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{5EA0AAF9-41CA-02C7-F684-E9D587228388}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

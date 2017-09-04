@@ -17,6 +17,9 @@ TagManager:
   - Coin
   - subBoss
   - subGate
+  - subCam
+  - shop
+  - sword
   layers:
   - Default
   - TransparentFX

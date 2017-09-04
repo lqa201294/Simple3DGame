@@ -48,10 +48,8 @@
   <ItemGroup>
      <Compile Include="Assets\RPG_Game\Script\Player\CharaView.js" />
      <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\Readme.txt" />
      <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
-     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
      <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
      <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEngine.UI">
@@ -78,12 +76,6 @@
  <Reference Include="LitJson">
  <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/RPG_Game/LitJson.dll</HintPath>
  </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{09DACF68-8F75-457A-0E10-8E2E9BD23D49}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{5EA0AAF9-41CA-02C7-F684-E9D587228388}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

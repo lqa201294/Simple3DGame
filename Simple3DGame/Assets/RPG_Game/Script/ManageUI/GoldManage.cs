@@ -18,4 +18,9 @@ public class GoldManage : MonoBehaviour {
 	{
 		curgold.text = goldCollection.ToString();
 	}
+
+	public void spendGold( int amount)
+	{
+		goldCollection -= amount;	
+	}
 }

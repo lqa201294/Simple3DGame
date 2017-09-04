@@ -35,6 +35,12 @@ public class DemonAttack : MonoBehaviour {
 			Attack ();
 		}
 
+		if (Player.GetComponent<Healthplayer> ().curhealth <= 0) 
+		{
+			anim.Play ("Idle");
+			Player.GetComponent<MovePlayer> ().enabled = false;
+			Player.GetComponent<PlayerAttack>().enabled = false;
+		}
 
 
 		if (SkillV.absorbDamage) 
@@ -62,9 +68,28 @@ public class DemonAttack : MonoBehaviour {
 	{
 		if (col.gameObject == Player) 
 		{
-			canAttack = true;
+			Vector3 dir = col.transform.position - transform.position;
+			if (Vector3.Dot (dir, transform.forward) > 0.3f) 
+			{
+				canAttack = true;
+			}
+
 		}
 	}
+
+	void OnTriggerStay(Collider col)
+	{
+		if (col.gameObject == Player) 
+		{
+			Vector3 dir = col.transform.position - transform.position;
+			if (Vector3.Dot (dir, transform.forward) > 0.3f) 
+			{
+				canAttack = true;
+			}
+
+		}
+	}
+
 
 	void OnTriggerExit(Collider col)
 	{

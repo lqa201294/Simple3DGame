@@ -11,17 +11,18 @@ public class LimitMinimapCam : MonoBehaviour {
 
 	Vector3 position;
 
-	// Use this for initialization
-	void Start () {
-		position = gameObject.transform.position;
-	}
-	
+	public Transform target ;
+	public float smoothing = 5f;
+
 	// Update is called once per frame
 	void Update () 
 	{
-		position.x = Mathf.Clamp (transform.position.x, minX, maxX);
-		position.z = Mathf.Clamp (transform.position.z, minZ, maxZ);
+
+		position.x = Mathf.Clamp (target.position.x, minX, maxX);
+		position.y = 70f;
+		position.z = Mathf.Clamp (target.position.z, minZ, maxZ);
 
 		transform.position = position;
+
 	}
 }

@@ -33,6 +33,8 @@ public class ManageEnemy : MonoBehaviour {
 		numsmile = 0;
 	
 		callboss = false;
+		callsubboss = false;
+
 		totalscore = 7 * spawnPoints.Length ;
 	}
 
@@ -56,7 +58,7 @@ public class ManageEnemy : MonoBehaviour {
 			CallBoss ();
 		}
 
-		if (ScoreManage.Score >= totalscore / 2 && callsubboss == false) 
+		if (ScoreManage.Score >= totalscore / 3 && callsubboss == false) 
 		{
 			callsubboss = true;
 			CallDemon ();

@@ -10,6 +10,7 @@ public class DemonMove : MonoBehaviour {
 	GameObject player;
 	Healthplayer hpplayer;
 	Animator anim;
+	public float turnspeed;
 
 	bool moving;
 	bool colplayer;
@@ -50,6 +51,16 @@ public class DemonMove : MonoBehaviour {
 			nav.enabled = false;
 		}
 	}
+
+	void OnTriggerStay(Collider col)
+	{
+		if (col.tag == "Player") 
+		{
+			transform.rotation = Quaternion.Slerp (transform.rotation, 
+				Quaternion.LookRotation(col.transform.position - transform.position),turnspeed * Time.deltaTime);
+		}
+	}
+
 
 	void OnTriggerExit(Collider col)
 	{

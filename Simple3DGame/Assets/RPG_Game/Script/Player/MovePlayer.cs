@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class MovePlayer : MonoBehaviour {
 	public GameObject MinimapCam;
+	public GameObject Shop;
+	public GameObject Notify;
+
 	public float speed = 6f;            // The speed that the player will move at.
 
-	Vector3 movement;                   // The vector to store the direction of the player's movement.
+	public Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
 	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 
@@ -38,14 +40,19 @@ public class MovePlayer : MonoBehaviour {
 
 	void FixedUpdate ()
 	{
-		
-		// Store the input axes.
-		float h = CrossPlatformInputManager.GetAxisRaw("Horizontal");
-		float v = CrossPlatformInputManager.GetAxisRaw("Vertical");
-	
-		// Move the player around the scene.
-		Move (h, v);
 
+		// Store the input axes.
+		float h = Input.GetAxisRaw("Horizontal");
+		float v = Input.GetAxisRaw("Vertical");
+	
+		movement = new Vector3 (h, 0f, v);
+		if (movement != Vector3.zero) 
+		{
+			transform.rotation = Quaternion.Slerp (transform.rotation ,Quaternion.LookRotation(movement.normalized),0.2f);
+		}
+			
+		transform.Translate (movement * speed * Time.deltaTime,Space.World);
+	
 		limitTranform.x = Mathf.Clamp (transform.position.x, xmin, xmax);
 		limitTranform.z = Mathf.Clamp (transform.position.z ,zmin , zmax);
 
@@ -53,50 +60,22 @@ public class MovePlayer : MonoBehaviour {
 
 		if (Input.GetKeyDown (KeyCode.Tab)) 
 		{
-			MinimapCam.SetActive (true);
-		}
-		if (Input.GetKeyDown (KeyCode.Escape)) 
-		{
-			MinimapCam.SetActive (false);
-		}
-			
-		if(Input.GetKey(KeyCode.LeftArrow))
-		{	
-			transform.eulerAngles = new Vector3 (0, -90f, 0);
+			if (MinimapCam.activeSelf == true)
+			{
+				MinimapCam.SetActive (false);
+			}
+			else
+			{
+				MinimapCam.SetActive (true);
+			}
 
 		}
-		if (Input.GetKey (KeyCode.RightArrow)) 
-		{
-			transform.eulerAngles = new Vector3 (0, 90f, 0);
-		}
-
-		if(Input.GetKey(KeyCode.UpArrow))
-		{
-			transform.eulerAngles = new Vector3 (0,0, 0);
-		}
-
-		if(Input.GetKey(KeyCode.DownArrow))
-		{
-			transform.eulerAngles = new Vector3 (0, 180, 0);
-		}
-
 
 		// Animate the player.
 		Animating (h, v);
 	}
 		
 
-	void Move (float h, float v)
-	{
-		// Set the movement vector based on the axis input.
-		movement.Set (h, 0f, v);
-
-		// Normalise the movement vector and make it proportional to the speed per second.
-		movement = movement.normalized * speed * Time.deltaTime;
-
-		// Move the player to it's current position plus the movement.
-		playerRigidbody.MovePosition (transform.position + movement);
-	}
 
 
 	void Animating (float h, float v)
@@ -113,9 +92,27 @@ public class MovePlayer : MonoBehaviour {
 		if (col.gameObject.tag == "Gate") 
 		{
 			StartCoroutine (DestroyGate(col.gameObject,1f));
+		}
 
+		if (col.tag == "subGate") 
+		{
+			Notify.SetActive (true);
+		}
+
+		if (col.tag == "shop") 
+		{
+			Shop.SetActive (true);
 		}
 	}
+
+	void OnTriggerExit(Collider col)
+	{
+		if (col.tag == "shop") 
+		{
+			Shop.SetActive (false);
+		}
+	}
+
 
 	IEnumerator DestroyGate(GameObject Gate,float time)
 	{

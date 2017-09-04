@@ -73,11 +73,17 @@ public class Healthplayer : MonoBehaviour {
 		anim.SetTrigger ("Dead");
 
 		GameOver.SetActive (true);
+
+		float timer = 0f;
+		float maxtime = 20f;
 		Color startcolor = new Color (0,0,0,0);
 		Color endcolor = new Color (0,0,0,1);
-		GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor , speedLerp* Time.deltaTime);
 
-
+		while (timer < maxtime) 
+		{
+			timer += Time.deltaTime;
+			GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor , timer);
+		}
 	}
 
 	public void RecoverHealth(float amount)

@@ -11,7 +11,7 @@ public class CameraFaceBillBoard : MonoBehaviour {
 
 		cam = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		if (cam != null) 

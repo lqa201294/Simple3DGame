@@ -1,0 +1,21 @@
+fileFormatVersion: 2
+guid: defef90581002e645839cf0011fec6a4
+timeCreated: 1504083899
+licenseType: Free
+TrueTypeFontImporter:
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Shark_Soft_Bites
+  fontNames:
+  - Shark_Soft_Bites
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
