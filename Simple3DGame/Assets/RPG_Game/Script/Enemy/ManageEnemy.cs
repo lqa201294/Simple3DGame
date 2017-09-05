@@ -85,8 +85,8 @@ public class ManageEnemy : MonoBehaviour {
 
 	void CallDemon ()
 	{
-		Gate.SetActive (true);
-		Instantiate (Demon , subBossPos.position, Quaternion.identity);
+		Gate.transform.GetChild(CallSmileArea.area).gameObject.SetActive (true);
+		Instantiate (Demon , subBossPos.transform.GetChild(CallSmileArea.area).transform.position, Quaternion.identity);
 	}
 
 	void CallBoss()

@@ -1932,6 +1932,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distance: 0
   turnspeed: 1
+  demonEffect: {fileID: 1733313689508732, guid: 108b921b404893b46a42f14dbc819f25,
+    type: 2}
 --- !u!114 &114187871206523878
 MonoBehaviour:
   m_ObjectHideFlags: 1

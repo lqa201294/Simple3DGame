@@ -20,6 +20,7 @@ public class MovePlayer : MonoBehaviour {
 	bool up;
 	bool down;
 
+
 	public float xmin;
 	public float xmax;
 	public float zmin;
@@ -71,10 +72,15 @@ public class MovePlayer : MonoBehaviour {
 
 		}
 
+
+	
+
 		// Animate the player.
 		Animating (h, v);
 	}
 		
+
+
 
 
 
@@ -85,6 +91,14 @@ public class MovePlayer : MonoBehaviour {
 
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
+	}
+
+
+
+
+	void PoisonAura()
+	{
+		GetComponent<Healthplayer> ().takedamaged (1);
 	}
 
 	void OnTriggerEnter(Collider col)
@@ -103,6 +117,13 @@ public class MovePlayer : MonoBehaviour {
 		{
 			Shop.SetActive (true);
 		}
+
+		if (col.tag == "Aura") 
+		{
+			InvokeRepeating ("PoisonAura", 0, 2);
+		}
+	
+
 	}
 
 	void OnTriggerExit(Collider col)
@@ -110,6 +131,11 @@ public class MovePlayer : MonoBehaviour {
 		if (col.tag == "shop") 
 		{
 			Shop.SetActive (false);
+		}
+
+		if (col.tag == "Aura") 
+		{
+			CancelInvoke ();
 		}
 	}
 

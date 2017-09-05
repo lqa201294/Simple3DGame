@@ -20,6 +20,7 @@ TagManager:
   - subCam
   - shop
   - sword
+  - Aura
   layers:
   - Default
   - TransparentFX

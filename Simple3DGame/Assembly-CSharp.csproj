@@ -61,6 +61,7 @@
      <Compile Include="Assets\RPG_Game\Script\ManageUI\GoldManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\SetNamePlayer.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\SubGate.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\GetItem.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\Healthplayer.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\ManaPlayer.cs" />

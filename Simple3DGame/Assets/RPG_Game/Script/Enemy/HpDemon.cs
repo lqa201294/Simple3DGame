@@ -10,6 +10,7 @@ public class HpDemon : MonoBehaviour {
 	public GameObject AuraEffect;
 	public GameObject DropItem;
 
+
 	public Image hpdisplay;
 	public Text hpstatus;
 	GameObject Player;
@@ -61,8 +62,9 @@ public class HpDemon : MonoBehaviour {
 		if (currentHP <= 0) 
 		{
 			anim.SetTrigger ("dead");
-			Instantiate (DropItem, transform.position, Quaternion.identity); 
+			StartCoroutine (DelayDropItem(2f));
 
+			GetComponent<BoxCollider> ().enabled = false;
 			GetComponent<DemonMove> ().enabled = false;
 			GetComponent<DemonAttack> ().enabled = false;
 			GetComponent<HpDemon> ().enabled = false;
@@ -75,6 +77,12 @@ public class HpDemon : MonoBehaviour {
 			fury = true;
 		}
 
+	}
+
+	IEnumerator DelayDropItem(float time)
+	{
+		yield return new WaitForSeconds (time);
+		Instantiate (DropItem, transform.position, Quaternion.identity); 
 	}
 
 	void OnTriggerEnter(Collider col)
