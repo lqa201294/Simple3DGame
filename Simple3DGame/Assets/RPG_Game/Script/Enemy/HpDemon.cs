@@ -7,8 +7,9 @@ using UnityEngine.UI;
 public class HpDemon : MonoBehaviour {
 	public float currentHP;
 	public float maxHP;
-	public GameObject AuraEffect;
+	public GameObject[] AuraEffect;
 	public GameObject DropItem;
+	public GameObject demonEffect;
 
 
 	public Image hpdisplay;
@@ -22,8 +23,32 @@ public class HpDemon : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
 	{
-		GameObject go =  (GameObject)Instantiate (AuraEffect); 
+		GameObject go =  (GameObject)Instantiate (AuraEffect[Random.Range(0, AuraEffect.Length)]); 
 		go.transform.SetParent (gameObject.transform,false);
+
+		GameObject effect = (GameObject)Instantiate (demonEffect);
+		effect.transform.SetParent (gameObject.transform, false);
+		effect.transform.localScale = new Vector3 (3,3,6);
+
+		switch (CallSmileArea.area) 
+		{
+		case 0: 
+			ParticleSystem.MainModule setting	= effect.GetComponent<ParticleSystem> ().main;
+			setting.startColor = Color.green;
+			break;
+		case 1:
+			ParticleSystem.MainModule setcolor	= effect.GetComponent<ParticleSystem> ().main;
+			setcolor.startColor = Color.yellow;
+			break;
+		case 2:
+			ParticleSystem.MainModule set	= effect.GetComponent<ParticleSystem> ().main;
+			set.startColor = Color.white;
+			break;
+		case 3:
+			ParticleSystem.MainModule setcl	= effect.GetComponent<ParticleSystem> ().main;
+			setcl.startColor = Color.red;
+			break;
+		}
 
 
 		Player = GameObject.FindGameObjectWithTag ("Player");
@@ -38,21 +63,25 @@ public class HpDemon : MonoBehaviour {
 	void Update ()
 	{
 
-		if (fury) 
-		{
-			anim.SetBool ("fury", fury);
-			fury = false;
-		}
+//		if (fury) 
+//		{
+//			anim.SetBool ("fury", fury);
+//			fury = false;
+//		}
 
+		if (currentHP < 0) 
+		{
+			currentHP = 0;
+		}
 
 		hpdisplay.fillAmount = currentHP / maxHP;
 		hpstatus.text = currentHP + "/" + maxHP;
 	}
 
-	void ChangeStatus()
-	{
-		anim.SetBool ("fury", fury);
-	}
+//	void ChangeStatus()
+//	{
+//		anim.SetBool ("fury", fury);
+//	}
 
 
 	public void GetDamage(float amount)
@@ -61,20 +90,24 @@ public class HpDemon : MonoBehaviour {
 
 		if (currentHP <= 0) 
 		{
-			anim.SetTrigger ("dead");
-			StartCoroutine (DelayDropItem(2f));
+			anim.Play ("Death");
+
+			StartCoroutine (DelayDropItem(3f));
+			Destroy (transform.GetChild (4).gameObject);
+			Destroy (transform.GetChild (3).gameObject);
 
 			GetComponent<BoxCollider> ().enabled = false;
 			GetComponent<DemonMove> ().enabled = false;
 			GetComponent<DemonAttack> ().enabled = false;
-			GetComponent<HpDemon> ().enabled = false;
+		
 
 		} 
 
 		if (currentHP <= maxHP / 2 && n < 1) 
 		{
 			n++;
-			fury = true;
+			anim.Play ("Fury");
+			//fury = true;
 		}
 
 	}
@@ -83,6 +116,7 @@ public class HpDemon : MonoBehaviour {
 	{
 		yield return new WaitForSeconds (time);
 		Instantiate (DropItem, transform.position, Quaternion.identity); 
+	
 	}
 
 	void OnTriggerEnter(Collider col)

@@ -47,7 +47,7 @@ public class SkillX : MonoBehaviour {
 			else
 			{
 				Notify.SetActive (true);
-				Notify.GetComponent<Text>().text = "Not enough HP Potion!";
+				Notify.GetComponent<Text>().text ="Not enough MP Potion or in CD time!";
 				StartCoroutine (HideNotify(2f));
 			}
 		}

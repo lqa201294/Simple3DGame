@@ -4,20 +4,14 @@ using UnityEngine;
 
 public class ESkill : MonoBehaviour {
 	public float speed = 2f;
-	Vector3 direction;
 	GameObject player;
+	Vector3 direction;
 
-	public GameObject destroyParticle;
 
 	void Awake()
 	{
 		player = GameObject.FindGameObjectWithTag ("Player");
-
-		if (player.GetComponent<MovePlayer> ().movement != Vector3.zero)
-		{
-			direction = player.GetComponent<MovePlayer> ().movement;
-		} 
-			
+		direction = player.transform.forward;
 	}
 
 	void Start()
@@ -27,7 +21,7 @@ public class ESkill : MonoBehaviour {
 
 	void Update () 
 	{
-		transform.position += direction.normalized * speed * Time.deltaTime;
+		transform.position +=  direction * speed * Time.deltaTime;
 	}
 
 }

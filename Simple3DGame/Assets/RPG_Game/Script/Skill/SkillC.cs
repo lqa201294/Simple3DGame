@@ -13,6 +13,8 @@ public class SkillC : MonoBehaviour {
 	public Text CdText;
 
 	public GameObject skill;
+	public GameObject CskillUp;
+
 	public GameObject Player;
 	public GameObject Notify;
 
@@ -69,8 +71,24 @@ public class SkillC : MonoBehaviour {
 
 		float angleY = Player.transform.eulerAngles.y + skill.transform.eulerAngles.y;
 
-		Instantiate (skill, Player.transform.position + new Vector3(0f,0.3f,0f), Quaternion.Euler(-90f, angleY, 0f));
+		if (ItemEffect.UpgradePlayerskill)
+		{
+			Instantiate (CskillUp, Player.transform.position + new Vector3(0f,0.3f,0f), Quaternion.identity);
+		}
+		else
+		{
+			GameObject go =  (GameObject)Instantiate (CskillUp);
+			go.transform.SetParent (Player.transform, false);
+			StartCoroutine (DestroySkill(go , 2f));
+		}
+
 	
+	}
+
+	IEnumerator DestroySkill(GameObject skill , float time)
+	{
+		yield return new WaitForSeconds (time);
+		Destroy (skill);
 	}
 
 	IEnumerator HideNotify(float time)

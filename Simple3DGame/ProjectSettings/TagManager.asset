@@ -5,10 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy
-  - tree
   - shield
-  - Environment
-  - skillE
   - Boss
   - Gate
   - Eskill
@@ -21,6 +18,9 @@ TagManager:
   - shop
   - sword
   - Aura
+  - angel
+  - tower
+  - SkillUpgraded
   layers:
   - Default
   - TransparentFX
@@ -37,7 +37,7 @@ TagManager:
   - Player
   - area
   - item
-  - 
+  - Enemy
   - 
   - 
   - 

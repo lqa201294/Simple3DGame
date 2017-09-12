@@ -15,7 +15,7 @@ public class DemonMove : MonoBehaviour {
 	bool moving;
 	bool colplayer;
 
-	public GameObject demonEffect;
+
 
 	// Use this for initialization
 	void Awake () {
@@ -24,33 +24,6 @@ public class DemonMove : MonoBehaviour {
 
 		anim = GetComponent<Animator> ();
 		nav = GetComponent<NavMeshAgent> ();
-
-
-		GameObject go = (GameObject)Instantiate (demonEffect);
-		go.transform.SetParent (gameObject.transform, false);
-		go.transform.localRotation = Quaternion.Euler (-90,0,0);
-		go.transform.localScale = new Vector3 (3,3,6);
-
-		switch (CallSmileArea.area) 
-		{
-		case 0: 
-			ParticleSystem.MainModule setting	= go.GetComponent<ParticleSystem> ().main;
-			setting.startColor = Color.green;
-			break;
-		case 1:
-			ParticleSystem.MainModule setcolor	= go.GetComponent<ParticleSystem> ().main;
-			setcolor.startColor = Color.cyan;
-			break;
-		case 2:
-			ParticleSystem.MainModule set	= go.GetComponent<ParticleSystem> ().main;
-			set.startColor = Color.white;
-			break;
-		case 3:
-			ParticleSystem.MainModule setcl	= go.GetComponent<ParticleSystem> ().main;
-			setcl.startColor = Color.red;
-			break;
-		}
-
 
 	}
 	

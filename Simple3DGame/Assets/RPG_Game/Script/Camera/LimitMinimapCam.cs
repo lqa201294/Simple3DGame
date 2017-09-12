@@ -12,7 +12,6 @@ public class LimitMinimapCam : MonoBehaviour {
 	Vector3 position;
 
 	public Transform target ;
-	public float smoothing = 5f;
 
 	// Update is called once per frame
 	void Update () 

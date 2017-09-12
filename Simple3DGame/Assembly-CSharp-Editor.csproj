@@ -51,15 +51,16 @@
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Editor\RenderEffectInspector.cs" />
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Editor\ShaderCustomEditor\ShaderMaterialsEditor.cs" />
      <Compile Include="Assets\Particlecollection_Free samples\Plugins\Effect\Editor\XUIUtils.cs" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\RPG_Game\Model\Cartoon lowpoly water well\readme.txt" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\effect_distortion_mask.shader" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\Read me(En.Jp).txt" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddSoftEffect.shader" />
-     <None Include="Assets\Standard Assets\Fonts\OpenSans\License!.txt" />
-     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticlePremultiplyBlend.shader" />
-     <None Include="Assets\Particlecollection_Free samples\READ ME.txt" />
-     <None Include="Assets\Fortress Gate_Free\ReadMe.txt" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleAddEffect.shader" />
      <None Include="Assets\Particlecollection_Free samples\Plugins\Effect\Shader\ParticleBlendEffect.shader" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom2.shader" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEditor.Advertisements">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/Advertisements/Editor/UnityEditor.Advertisements.dll</HintPath>
  </Reference>
@@ -114,18 +115,15 @@
  <Reference Include="UnityEditor.WindowsStandalone.Extensions">
  <HintPath>C:/Program Files/Unity/Editor/Data/PlaybackEngines/windowsstandalonesupport/UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
  </Reference>
+ <Reference Include="LitJson">
+ <HintPath>D:/github/Simple3DGame/Simple3DGame/Assets/RPG_Game/LitJson.dll</HintPath>
+ </Reference>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{09DACF68-8F75-457A-0E10-8E2E9BD23D49}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-UnityScript-firstpass.unityproj">
-      <Project>{5EA0AAF9-41CA-02C7-F684-E9D587228388}</Project>      <Name>Assembly-UnityScript-firstpass</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{B01A0BE9-AB34-D38E-82C3-41AE66799C00}</Project>      <Name>Assembly-CSharp</Name>    </ProjectReference>
     <ProjectReference Include="Assembly-UnityScript.unityproj">
       <Project>{27852087-E419-A6A7-128D-6FF5813EBDB6}</Project>      <Name>Assembly-UnityScript</Name>    </ProjectReference>
-    <ProjectReference Include="Assembly-CSharp-Editor-firstpass.csproj">
-      <Project>{BA7F4335-78CC-3F84-F5AA-627E8805D1E4}</Project>      <Name>Assembly-CSharp-Editor-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

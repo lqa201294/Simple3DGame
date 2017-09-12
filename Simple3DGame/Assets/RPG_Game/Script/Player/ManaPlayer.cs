@@ -28,6 +28,7 @@ public class ManaPlayer : MonoBehaviour {
 	{
 		curMana -= ManaCost;
 	}
+
 	public void ManaRecover(float amount)
 	{
 		ParticleSystem.MainModule setting = ManaRecoverParticle.GetComponent<ParticleSystem> ().main;
@@ -38,6 +39,30 @@ public class ManaPlayer : MonoBehaviour {
 		go.transform.eulerAngles = new Vector3 (-90f,0f,0f);
 		go.transform.localScale = new Vector3 (5f,5f,5f);
 		curMana += amount;
+
+	}
+
+
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.gameObject.tag == "tower") 
+		{
+			InvokeRepeating ("ManaRegen", 0, 1);
+		}
+	}
+
+	void OnTriggerExit(Collider col)
+	{
+		CancelInvoke ();
+	}
+
+
+	void ManaRegen()
+	{
+		if (curMana < maxMana) 
+		{
+			ManaRecover (1);
+		}
 
 	}
 }

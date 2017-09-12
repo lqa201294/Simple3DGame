@@ -11,12 +11,14 @@ public class HpSmile : MonoBehaviour {
 
 	Image hpsmile;
 	Text showhp;
+
 	Animator anim;
 
 	public Camera m_camera;
 	public GameObject[] Gate;
 	public GameObject DestroyParticle;
 	GameObject HPDisplay;
+	GameObject FinishNotify;
 	public GameObject[] PotionOrCoin;
 	int[] DropItem;
 
@@ -24,11 +26,12 @@ public class HpSmile : MonoBehaviour {
 
 	public static bool clearArea;
 
-
 	void Awake()
 	{
 		m_camera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		DropItem = new int[10];
+
+		FinishNotify = GameObject.FindGameObjectWithTag ("Finish");
 	}
 
 	// Use this for initialization
@@ -77,9 +80,24 @@ public class HpSmile : MonoBehaviour {
 
 			if (gameObject.tag == "Boss") 
 			{
+
+				if (CallSmileArea.area >= 3) 
+				{
+					SaveTimeClear ();
+				}
+				else 
+				{
+					CallSmileArea.area++;
+				}
+
 				clearArea = true;
-				CallSmileArea.area++;
+
 			}
+		}
+
+		if (CurrentSmileHP < 0) 
+		{
+			CurrentSmileHP = 0;
 		}
 
 		if (gameObject.tag == "Boss") 
@@ -97,14 +115,27 @@ public class HpSmile : MonoBehaviour {
 	}
 
 
+	void SaveTimeClear()
+	{
+		FinishNotify.SetActive (true);
+		FinishNotify.GetComponent<Text> ().text = "All Clear";
+
+		PlayerPrefs.SetFloat (SetNamePlayer.PlayerName, TimeManage.curTime);
+		PlayerPrefs.Save ();
+	}
+
+
+
 	void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "Eskill") 
 		{
 			CurrentSmileHP -= 2 * getdamage;
 		}
-	}
 
+
+	}
+		
 
 	IEnumerator HitDamaged(GameObject skin, float ntime, float time)
 	{

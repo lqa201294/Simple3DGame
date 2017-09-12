@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 224248685674158668}
   - component: {fileID: 222374711925241406}
   - component: {fileID: 114878651761541416}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Text (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4482327676055630}
   - component: {fileID: 137454457375808244}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: ModelSlime
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,8 +54,25 @@ GameObject:
   - component: {fileID: 224563058621618842}
   - component: {fileID: 222335596702084162}
   - component: {fileID: 114697304985024650}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: displayhp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1366802885894484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4364406156890628}
+  - component: {fileID: 135938326077102762}
+  - component: {fileID: 54889684006575880}
+  m_Layer: 15
+  m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +86,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4506300187949918}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slime_Joint02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +123,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4595429339076448}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slime_Joint03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -121,7 +138,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4328120366746424}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -139,7 +156,7 @@ GameObject:
   - component: {fileID: 223499178696809080}
   - component: {fileID: 114444661143436596}
   - component: {fileID: 114786794779973876}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: HP (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -154,7 +171,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4159458021153424}
-  m_Layer: 0
+  m_Layer: 15
   m_Name: Slime_Joint01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,12 +185,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601593063565200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 114.41497, y: 0, z: 328.53812}
+  m_LocalPosition: {x: 30.296204, y: 0, z: 62.799244}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4482327676055630}
   - {fileID: 4328120366746424}
   - {fileID: 224453437714124534}
+  - {fileID: 4364406156890628}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -205,6 +223,19 @@ Transform:
   - {fileID: 4159458021153424}
   m_Father: {fileID: 4030926508868666}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4364406156890628
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366802885894484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4030926508868666}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4482327676055630
 Transform:
@@ -259,6 +290,21 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!54 &54889684006575880
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366802885894484}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &95300202533619666
 Animator:
@@ -441,6 +487,18 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.4
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!135 &135938326077102762
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1366802885894484}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!137 &137454457375808244
 SkinnedMeshRenderer:

@@ -16,8 +16,10 @@ public class Healthplayer : MonoBehaviour {
 	public GameObject HealthSkilParticle;
 	public Text StatusHP;
 	public GameObject GameOver;
+	GameObject DemonAura;
 
 	Animator anim;
+	bool colAura;
 
 	// Use this for initialization
 	void Awake ()
@@ -52,9 +54,56 @@ public class Healthplayer : MonoBehaviour {
 		healthbar.GetComponent<Slider> ().value = curhealth / startHealth;
 		StatusHP.GetComponent<Text> ().text = curhealth + "/" + startHealth;
 
+		if (DemonAura == null && colAura) 
+		{
+			colAura = false;
+			CancelInvoke ();
+		}
+	}
+		
+
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.tag == "Aura") 
+		{
+			DemonAura = col.gameObject;
+			colAura = true;
+			InvokeRepeating ("PoisonAura", 0, 1.5f);
+		}
+
+		if (col.tag == "angel") 
+		{
+			InvokeRepeating ("HPRegen", 0, 1);
+		}
 
 	}
-	
+
+	void OnTriggerExit(Collider col)
+	{
+		if (col.tag == "Aura") 
+		{
+			colAura = false;
+			CancelInvoke ();
+		}
+
+		if (col.tag == "angel") 
+		{
+			CancelInvoke ();
+		}
+	}
+
+	void HPRegen()
+	{
+		if (curhealth < startHealth) {
+			RecoverHealth (1);
+		}
+	}
+
+	void PoisonAura()
+	{
+		takedamaged (1);
+	}
+
 
 	public void takedamaged(float amount)
 	{
@@ -64,6 +113,7 @@ public class Healthplayer : MonoBehaviour {
 		if (curhealth <= 0) 
 		{
 			PlayerDead ();
+
 		}	
 	
 	}
@@ -73,17 +123,8 @@ public class Healthplayer : MonoBehaviour {
 		anim.SetTrigger ("Dead");
 
 		GameOver.SetActive (true);
+		GameOver.GetComponent<Text> ().text = "Game Over";
 
-		float timer = 0f;
-		float maxtime = 20f;
-		Color startcolor = new Color (0,0,0,0);
-		Color endcolor = new Color (0,0,0,1);
-
-		while (timer < maxtime) 
-		{
-			timer += Time.deltaTime;
-			GameOver.GetComponent<Text> ().color = Color.Lerp (startcolor , endcolor , timer);
-		}
 	}
 
 	public void RecoverHealth(float amount)

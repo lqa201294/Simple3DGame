@@ -7,10 +7,13 @@ public class ItemEffect : MonoBehaviour {
 	public GameObject effect;
 	public GameObject EvolveParticle;
 
+	public static bool UpgradePlayerskill;
+
 	// Use this for initialization
 	void Start () {
 
-		Instantiate (effect, transform.position, Quaternion.identity);
+		GameObject go = (GameObject)Instantiate (effect);
+		go.transform.SetParent (gameObject.transform, false);
 
 		switch (CallSmileArea.area) 
 		{
@@ -31,7 +34,7 @@ public class ItemEffect : MonoBehaviour {
 
 		case 3: 
 			ParticleSystem.MainModule setcl = transform.GetChild (1).GetComponent<ParticleSystem> ().main;
-			setcl.startColor = Color.blue;
+			setcl.startColor = Color.white;
 			break;
 		}
 	}
@@ -47,14 +50,16 @@ public class ItemEffect : MonoBehaviour {
 
 	IEnumerator Evolve(float time, GameObject Player)
 	{
-		Instantiate (EvolveParticle, Player.transform.position, Quaternion.Euler(-90f,0,0));
+		UpgradePlayerskill = true;
+		yield return new WaitForSeconds (time/2);
 
+		Instantiate (EvolveParticle, Player.transform.position, Quaternion.identity);
 		Player.GetComponent<MovePlayer> ().enabled = false;
 
 		yield return new WaitForSeconds (time);
 
 		Player.GetComponent<MovePlayer> ().enabled = true;
-		Destroy (effect);
+		Destroy (transform.GetChild(2).gameObject);
 		Destroy (gameObject);
 	}
 }

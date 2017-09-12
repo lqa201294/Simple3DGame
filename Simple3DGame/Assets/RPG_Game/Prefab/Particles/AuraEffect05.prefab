@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4574323672780724}
+  - component: {fileID: 135166227507796236}
   m_Layer: 0
   m_Name: AuraEffect05
   m_TagString: Untagged
@@ -101,6 +102,18 @@ Transform:
   m_Father: {fileID: 4574323672780724}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!135 &135166227507796236
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1965431685296514}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 7
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!198 &198082341776177480
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -158,7 +171,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: -2086976542
+  randomSeed: -317062455
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -310,7 +323,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 10
+      scalar: 15
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -3212,7 +3225,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
-  randomSeed: 2032462751
+  randomSeed: -366982491
   InitialModule:
     serializedVersion: 3
     enabled: 1
@@ -3364,7 +3377,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 8
+      scalar: 12
       minScalar: 0
       maxCurve:
         serializedVersion: 2

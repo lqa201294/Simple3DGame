@@ -47,11 +47,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\RPG_Game\Script\Player\CharaView.js" />
-     <None Include="Assets\Toon Forest free set\sqript\custom.shader" />
-     <None Include="Assets\Readme.txt" />
-     <None Include="Assets\Toon Forest free set\Read me(En.Jp).txt" />
-     <None Include="Assets\Toon Forest free set\sqript\custom2.shader" />
-     <None Include="Assets\Toon Forest free set\sqript\custom3.shader" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom.shader" />
+     <None Include="Assets\RPG_Game\Model\Cartoon lowpoly water well\readme.txt" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\Read me(En.Jp).txt" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom2.shader" />
+     <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom3.shader" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

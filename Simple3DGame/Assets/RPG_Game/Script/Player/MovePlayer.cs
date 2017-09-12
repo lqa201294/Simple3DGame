@@ -11,7 +11,6 @@ public class MovePlayer : MonoBehaviour {
 
 	public Vector3 movement;                   // The vector to store the direction of the player's movement.
 	Animator anim;                      // Reference to the animator component.
-	Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
 
 	Vector3 limitTranform;
 
@@ -33,7 +32,6 @@ public class MovePlayer : MonoBehaviour {
 	{
 		// Set up references.
 		anim = GetComponent <Animator> ();
-		playerRigidbody = GetComponent <Rigidbody> ();
 	
 		limitTranform = gameObject.transform.position;
 	}
@@ -80,10 +78,6 @@ public class MovePlayer : MonoBehaviour {
 	}
 		
 
-
-
-
-
 	void Animating (float h, float v)
 	{
 		// Create a boolean that is true if either of the input axes is non-zero.
@@ -92,15 +86,7 @@ public class MovePlayer : MonoBehaviour {
 		// Tell the animator whether or not the player is walking.
 		anim.SetBool ("IsWalking", walking);
 	}
-
-
-
-
-	void PoisonAura()
-	{
-		GetComponent<Healthplayer> ().takedamaged (1);
-	}
-
+		
 	void OnTriggerEnter(Collider col)
 	{
 		if (col.gameObject.tag == "Gate") 
@@ -118,11 +104,7 @@ public class MovePlayer : MonoBehaviour {
 			Shop.SetActive (true);
 		}
 
-		if (col.tag == "Aura") 
-		{
-			InvokeRepeating ("PoisonAura", 0, 2);
-		}
-	
+
 
 	}
 
@@ -133,10 +115,7 @@ public class MovePlayer : MonoBehaviour {
 			Shop.SetActive (false);
 		}
 
-		if (col.tag == "Aura") 
-		{
-			CancelInvoke ();
-		}
+	
 	}
 
 

@@ -13,6 +13,8 @@ public class GetItem : MonoBehaviour {
 	public SkillZ NumberHp;
 	public SkillX NumberMp;
 
+	public GameObject GetSwordEffect;
+
 	// Update is called once per frame
 	void Update () 
 	{
@@ -57,6 +59,46 @@ public class GetItem : MonoBehaviour {
 			}
 
 		}
+
+	}
+
+	void OnTriggerEnter(Collider col)
+	{
+		if (col.tag == "sword") 
+		{
+			col.gameObject.GetComponent<BoxCollider> ().enabled = false;
+			StartCoroutine (GetEffect (3f, CallSmileArea.area));
+		}
+	}
+
+	IEnumerator GetEffect(float time , int area)
+	{
+		yield return new WaitForSeconds (time);
+		GameObject go = (GameObject)Instantiate (GetSwordEffect);
+		go.transform.SetParent (gameObject.transform, false);
+	
+
+		switch (area) 
+		{
+		case 0:
+			ParticleSystem.MainModule setting	= GetSwordEffect.GetComponent<ParticleSystem> ().main;
+			setting.startColor = Color.red;
+			break;
+		case 1:
+			ParticleSystem.MainModule st	= GetSwordEffect.GetComponent<ParticleSystem> ().main;
+			st.startColor = Color.green;
+			break;
+		case 2:
+			ParticleSystem.MainModule setcolor	= GetSwordEffect.GetComponent<ParticleSystem> ().main;
+			setcolor.startColor = Color.yellow;
+			break;
+		case 3:
+			ParticleSystem.MainModule setcl	= GetSwordEffect.GetComponent<ParticleSystem> ().main;
+			setcl.startColor = Color.white;
+			break;
+
+		}
+
 
 	}
 

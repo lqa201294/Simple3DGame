@@ -81,6 +81,23 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1768821432312900
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4034925839140280}
+  - component: {fileID: 135805900423110636}
+  - component: {fileID: 54798452311756138}
+  m_Layer: 15
+  m_Name: Gameobject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1834630474491348
 GameObject:
   m_ObjectHideFlags: 1
@@ -168,14 +185,28 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1601593063565200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 109.452644, y: 0, z: 347.21625}
+  m_LocalPosition: {x: 30.171446, y: 0.0000038146973, z: 78.35448}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4482327676055630}
   - {fileID: 4328120366746424}
   - {fileID: 224112492893816170}
+  - {fileID: 4034925839140280}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4034925839140280
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768821432312900}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4030926508868666}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4159458021153424
 Transform:
@@ -259,6 +290,21 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 4
+  m_CollisionDetection: 0
+--- !u!54 &54798452311756138
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768821432312900}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: Infinity
+  m_AngularDrag: Infinity
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 84
   m_CollisionDetection: 0
 --- !u!95 &95300202533619666
 Animator:
@@ -441,6 +487,18 @@ SphereCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.35
+  m_Center: {x: 0, y: 0.2, z: 0}
+--- !u!135 &135805900423110636
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768821432312900}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!137 &137454457375808244
 SkinnedMeshRenderer:
