@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
+
+
 public class SetNamePlayer : MonoBehaviour {
 	public GameObject SetNameBoard;
 	public InputField inputname;
@@ -29,6 +31,15 @@ public class SetNamePlayer : MonoBehaviour {
 		Time.timeScale = 1;
 
 		SetNameBoard.SetActive (false);
+
+//		LoginWithCustomIDRequest rq = new LoginWithCustomIDRequest ()
+//		{
+//			TitleId = "9EE2",
+//			CustomId = PlayerName,
+//			CreateAccount = true
+//				
+//		};
+
 	}
 
 }

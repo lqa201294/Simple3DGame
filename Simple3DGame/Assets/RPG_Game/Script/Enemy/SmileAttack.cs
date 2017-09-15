@@ -34,6 +34,10 @@ public class SmileAttack : MonoBehaviour {
 		attackDamage = float.Parse (ReadJsonData.itemdata["Level"][CallSmileArea.area]["attackdame"].ToString());
 		BossAttack = 2 * attackDamage;
 
+		if (gameObject.tag == "Boss") 
+		{
+			
+		}
 	}
 
 	

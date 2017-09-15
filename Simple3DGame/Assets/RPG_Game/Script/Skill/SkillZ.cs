@@ -37,7 +37,7 @@ public class SkillZ : MonoBehaviour {
 		}
 
 	
-		if (Input.GetKeyDown (KeyCode.Z)) 
+		if (Input.GetKeyDown (KeyCode.Z) && Time.timeScale == 1) 
 		{
 			if (cdtime <= 0 && DefaultHpPotion > 0) 
 			{

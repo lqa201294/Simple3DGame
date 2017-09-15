@@ -28,12 +28,15 @@ public class MovePlayer : MonoBehaviour {
 	public GameObject SpawnPoint;
 	public GameObject AreaPos;
 
-	void Awake ()
+	void Start ()
 	{
 		// Set up references.
 		anim = GetComponent <Animator> ();
 	
 		limitTranform = gameObject.transform.position;
+
+		transform.position = AreaPos.transform.GetChild (CallSmileArea.area).transform.position;
+
 	}
 
 
@@ -57,9 +60,10 @@ public class MovePlayer : MonoBehaviour {
 
 		transform.position = limitTranform;
 
+
 		if (Input.GetKeyDown (KeyCode.Tab)) 
 		{
-			if (MinimapCam.activeSelf == true)
+			if (MinimapCam.activeSelf)
 			{
 				MinimapCam.SetActive (false);
 			}
@@ -91,7 +95,7 @@ public class MovePlayer : MonoBehaviour {
 	{
 		if (col.gameObject.tag == "Gate") 
 		{
-			StartCoroutine (DestroyGate(col.gameObject,1f));
+			StartCoroutine (DestroyGate(col.gameObject,2f));
 		}
 
 		if (col.tag == "subGate") 
@@ -122,6 +126,7 @@ public class MovePlayer : MonoBehaviour {
 	IEnumerator DestroyGate(GameObject Gate,float time)
 	{
 		yield return new WaitForSeconds (time);
+		WriteJsonData.SaveData ();
 		transform.position = AreaPos.transform.GetChild (CallSmileArea.area).transform.position; 
 		yield return new WaitForSeconds (time);
 		Destroy (Gate);

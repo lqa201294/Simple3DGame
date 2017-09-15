@@ -8,7 +8,7 @@ public class CallSmileArea : MonoBehaviour {
 	public static int area;
 
 	// Use this for initialization
-	void Start ()
+	void Awake ()
 	{
 		area = 0;
 		MapArea [area].SetActive (true);
@@ -17,11 +17,10 @@ public class CallSmileArea : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
 	{
-		if (HpSmile.clearArea) 
+		if (ManageEnemy.clearArea) 
 		{
 			MapArea [area].SetActive (true);
 			MapArea [area - 1].SetActive (false);
 		}
-
 	}
 }

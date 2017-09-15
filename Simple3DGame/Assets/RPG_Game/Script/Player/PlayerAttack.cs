@@ -25,7 +25,7 @@ public class PlayerAttack : MonoBehaviour {
 		anim = GetComponent<Animator> ();
 
 		Plattackdame = float.Parse (ReadJsonData.itemdata["Level"][CallSmileArea.area]["attackdame"].ToString());
-
+	
 	}
 	
 	// Update is called once per frame

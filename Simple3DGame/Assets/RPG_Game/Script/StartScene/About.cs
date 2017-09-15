@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class About : MonoBehaviour {
 	public GameObject InfoPanel;
@@ -8,6 +9,7 @@ public class About : MonoBehaviour {
 	public void ShowInfo()
 	{
 		InfoPanel.SetActive (true);
+
 	}
 		
 	public void Back()

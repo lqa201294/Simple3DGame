@@ -17,21 +17,17 @@ public class HpSmile : MonoBehaviour {
 	public Camera m_camera;
 	public GameObject[] Gate;
 	public GameObject DestroyParticle;
+
 	GameObject HPDisplay;
-	GameObject FinishNotify;
 	public GameObject[] PotionOrCoin;
 	int[] DropItem;
 
-	float getdamage;
-
-	public static bool clearArea;
+	bool alive;
 
 	void Awake()
 	{
 		m_camera = GameObject.FindGameObjectWithTag ("MainCamera").GetComponent<Camera>();
 		DropItem = new int[10];
-
-		FinishNotify = GameObject.FindGameObjectWithTag ("Finish");
 	}
 
 	// Use this for initialization
@@ -58,10 +54,11 @@ public class HpSmile : MonoBehaviour {
 			CurrentSmileHP = BossSmileHP;
 			gameObject.name = "Boss";
 			gameObject.GetComponent<NavMeshAgent> ().speed = 4;
+			gameObject.transform.localScale *= 2;
 		}
 		
 
-		clearArea = false;
+		alive = true;
 	}
 	
 	// Update is called once per frame
@@ -74,31 +71,13 @@ public class HpSmile : MonoBehaviour {
 		}
 
 
-		if (CurrentSmileHP <= 0 && clearArea == false) 
-		{
-			StartCoroutine (HitDamaged(gameObject.transform.GetChild(0).gameObject, 3, 0.1f));
-
-			if (gameObject.tag == "Boss") 
-			{
-
-				if (CallSmileArea.area >= 3) 
-				{
-					SaveTimeClear ();
-				}
-				else 
-				{
-					CallSmileArea.area++;
-				}
-
-				clearArea = true;
-
-			}
-		}
-
-		if (CurrentSmileHP < 0) 
+		if (CurrentSmileHP <= 0 && alive) 
 		{
 			CurrentSmileHP = 0;
+			alive = false;
+			StartCoroutine (HitDamaged(gameObject.transform.GetChild(0).gameObject, 3, 0.1f));
 		}
+
 
 		if (gameObject.tag == "Boss") 
 		{
@@ -114,28 +93,6 @@ public class HpSmile : MonoBehaviour {
 
 	}
 
-
-	void SaveTimeClear()
-	{
-		FinishNotify.SetActive (true);
-		FinishNotify.GetComponent<Text> ().text = "All Clear";
-
-		PlayerPrefs.SetFloat (SetNamePlayer.PlayerName, TimeManage.curTime);
-		PlayerPrefs.Save ();
-	}
-
-
-
-	void OnTriggerEnter(Collider col)
-	{
-		if (col.gameObject.tag == "Eskill") 
-		{
-			CurrentSmileHP -= 2 * getdamage;
-		}
-
-
-	}
-		
 
 	IEnumerator HitDamaged(GameObject skin, float ntime, float time)
 	{
@@ -183,7 +140,6 @@ public class HpSmile : MonoBehaviour {
 
 	public void TakeDamage(float amount)
 	{
-		getdamage = amount;
 		CurrentSmileHP -= amount;
 		anim.SetTrigger ("damage");
 	}

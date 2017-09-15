@@ -4,10 +4,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class StartGame : MonoBehaviour {
-
+	public GameObject Loading;
 
 	public void GameStart()
 	{
-		SceneManager.LoadScene (1);
+		Loading.SetActive (true);
+		Leaderboard.destroyself = true;
+
 	}
 }

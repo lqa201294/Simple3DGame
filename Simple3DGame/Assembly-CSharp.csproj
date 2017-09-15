@@ -19,7 +19,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_1;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_5_6_1;UNITY_5_6;UNITY_5;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_DUCK_TYPING;ENABLE_GENERICS;ENABLE_PVR_GI;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_RUNTIME_NAVMESH_BUILDING;ENABLE_SPRITERENDERER_FLIPPING;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_RAKNET;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_WEBCAM;ENABLE_WWW;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_HUB;ENABLE_CLOUD_PROJECT_ID;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_METRICS;ENABLE_EDITOR_METRICS_CACHING;ENABLE_NATIVE_ARRAY;INCLUDE_DYNAMIC_GI;INCLUDE_GI;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;INCLUDE_PUBNUB;ENABLE_PLAYMODE_TESTS_RUNNER;ENABLE_SCRIPTING_NEW_CSHARP_COMPILER;ENABLE_VIDEO;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_SUBSTANCE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_UNITYWEBREQUEST;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_EVENT_QUEUE;ENABLE_CLUSTERINPUT;ENABLE_VR;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_2_0_SUBSET;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_NATIVE_ARRAY_CHECKS;UNITY_TEAM_LICENSE;CROSS_PLATFORM_INPUT;ENABLE_PLAYFABSERVER_API;DISABLE_PLAYFABCLIENT_API</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -50,6 +50,7 @@
      <Compile Include="Assets\RPG_Game\Script\Camera\CameraFollow.cs" />
      <Compile Include="Assets\RPG_Game\Script\Camera\LimitMinimapCam.cs" />
      <Compile Include="Assets\RPG_Game\Script\Database\ReadJsonData.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Database\WriteJsonData.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\CallSmileArea.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\DemonAttack.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\DemonMove.cs" />
@@ -59,8 +60,14 @@
      <Compile Include="Assets\RPG_Game\Script\Enemy\SmileAttack.cs" />
      <Compile Include="Assets\RPG_Game\Script\Enemy\SmileMove.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\GoldManage.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\Leaderboard.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\Loading.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\PauseEvent.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\PlayerScoreList.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreEntry.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\ScoreManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\SetNamePlayer.cs" />
+     <Compile Include="Assets\RPG_Game\Script\ManageUI\ShowLeaderBoard.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\SubGate.cs" />
      <Compile Include="Assets\RPG_Game\Script\ManageUI\TimeManage.cs" />
      <Compile Include="Assets\RPG_Game\Script\Player\GetItem.cs" />
@@ -82,12 +89,12 @@
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillV.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillX.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\SkillZ.cs" />
+     <Compile Include="Assets\RPG_Game\Script\Skill\explosionDuration.cs" />
      <Compile Include="Assets\RPG_Game\Script\Skill\hiteffectDuration.cs" />
      <Compile Include="Assets\RPG_Game\Script\StartScene\About.cs" />
      <Compile Include="Assets\RPG_Game\Script\StartScene\Exit.cs" />
      <Compile Include="Assets\RPG_Game\Script\StartScene\HighScore.cs" />
      <Compile Include="Assets\RPG_Game\Script\StartScene\StartGame.cs" />
-     <Compile Include="Assets\explosionDuration.cs" />
      <None Include="Assets\RPG_Game\Model\Toon Forest free set\sqript\custom.shader" />
      <None Include="Assets\RPG_Game\Model\Cartoon lowpoly water well\readme.txt" />
      <None Include="Assets\RPG_Game\Model\Toon Forest free set\Read me(En.Jp).txt" />

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class SkillC : MonoBehaviour {
 	
 	public float Cdtime;
-	public float maxCdtime = 10f;
+	public float maxCdtime = 15f;
 	public float manaCost = 20f;
 
 	public Image CdDisplay;
@@ -17,6 +17,8 @@ public class SkillC : MonoBehaviour {
 
 	public GameObject Player;
 	public GameObject Notify;
+
+	public static bool castskill; 
 
 	// Use this for initialization
 	void Start ()
@@ -38,7 +40,7 @@ public class SkillC : MonoBehaviour {
 			CdText.enabled = false;
 		}
 			
-		if (Input.GetKeyDown (KeyCode.C)) 
+		if (Input.GetKeyDown (KeyCode.C) && Time.timeScale == 1) 
 		{
 			if (Cdtime <= 0 && manaCost <= Player.GetComponent<ManaPlayer> ().curMana) 
 			{
@@ -67,19 +69,22 @@ public class SkillC : MonoBehaviour {
 	void CastSkillE()
 	{
 		Player.GetComponent<ManaPlayer> ().SpendMana (manaCost);
+		Player.GetComponent<Animator> ().Play ("Attack");
+
 		Cdtime = maxCdtime;
 
 		float angleY = Player.transform.eulerAngles.y + skill.transform.eulerAngles.y;
 
 		if (ItemEffect.UpgradePlayerskill)
 		{
-			Instantiate (CskillUp, Player.transform.position + new Vector3(0f,0.3f,0f), Quaternion.identity);
-		}
-		else
-		{
 			GameObject go =  (GameObject)Instantiate (CskillUp);
 			go.transform.SetParent (Player.transform, false);
 			StartCoroutine (DestroySkill(go , 2f));
+
+		}
+		else
+		{
+			Instantiate (skill, Player.transform.position + new Vector3(0f,0.3f,0f), Quaternion.Euler(-90, angleY,0));
 		}
 
 	

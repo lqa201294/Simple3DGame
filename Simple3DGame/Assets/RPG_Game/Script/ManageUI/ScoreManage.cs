@@ -10,14 +10,7 @@ public class ScoreManage : MonoBehaviour {
 
 	// Use this for initialization
 	void Awake () {
-		scoredisplay = GetComponent<Text> ();
-
 		Score = 0;
 	}
-	
-	// Update is called once per frame
-	void Update () 
-	{
-		scoredisplay.text = "Score:" +" " + Score;
-	}
+
 }

@@ -38,7 +38,7 @@ public class SkillX : MonoBehaviour {
 		}
 
 
-		if (Input.GetKeyDown (KeyCode.X)) 
+		if (Input.GetKeyDown (KeyCode.X) && Time.timeScale == 1) 
 		{
 			if (cdtime <= 0 && DefaultManaPotion > 0) 
 			{

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ApplyBuy : MonoBehaviour {
 	public GameObject BuyNotify;
@@ -9,19 +10,30 @@ public class ApplyBuy : MonoBehaviour {
 	public SkillZ CurHPpotion;
 	public SkillX CurMppotion;
 
+	public GameObject BillNotify;
+
 	public void Apply()
 	{
-		if (BuyItem.ItemName == "HpItem") 
+		if (nbuy.totalCost <= GoldManage.goldCollection)
 		{
-			CurHPpotion.GetHpPotion (nbuy.defaultNum);
+			if (BuyItem.ItemName == "HpItem") 
+			{
+				CurHPpotion.GetHpPotion (nbuy.defaultNum);
+			}
+			else if (BuyItem.ItemName == "MpItem") 
+			{
+				CurMppotion.GetMpPotion (nbuy.defaultNum);
+			}
+
+			gold.spendGold (nbuy.totalCost);
+			BuyNotify.SetActive (false);
 		}
-		else if (BuyItem.ItemName == "MpItem") 
+		else
 		{
-			CurMppotion.GetMpPotion (nbuy.defaultNum);
+			BillNotify.SetActive (true);
+			BillNotify.transform.GetChild (1).GetComponent<Button> ().onClick.AddListener (ok);
 		}
-	
-		gold.spendGold (nbuy.totalCost);
-		BuyNotify.SetActive (false);
+			
 	}
 
 	public void Back()
@@ -29,5 +41,9 @@ public class ApplyBuy : MonoBehaviour {
 		BuyNotify.SetActive (false);
 	}
 
+	public void ok()
+	{
+		BillNotify.SetActive (false);
+	}
 
 }

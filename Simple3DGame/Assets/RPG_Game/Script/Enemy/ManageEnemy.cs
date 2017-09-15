@@ -22,9 +22,11 @@ public class ManageEnemy : MonoBehaviour {
 	public GameObject Gate;
 	public Transform subBossPos;
 
+	public GameObject FinishNotify;
 
 	bool callboss;
 	bool callsubboss;
+	public static bool clearArea;
 
 	void Start ()
 	{
@@ -36,6 +38,8 @@ public class ManageEnemy : MonoBehaviour {
 		callsubboss = false;
 
 		totalscore = 7 * spawnPoints.Length ;
+
+		clearArea = false;
 	}
 
 	void Update()
@@ -64,8 +68,35 @@ public class ManageEnemy : MonoBehaviour {
 			CallDemon ();
 
 		}
+
+		if (ScoreManage.Score == totalscore + 1 && clearArea == false) 
+		{
+
+			if (CallSmileArea.area >= 3) 
+			{
+				SaveTimeClear ();
+			}
+
+			CallSmileArea.area++;
+			clearArea = true;
+
+		}
 			
 	}
+
+
+	void SaveTimeClear()
+	{
+		FinishNotify.SetActive (true);
+		FinishNotify.GetComponent<Text> ().text = "All Clear";
+
+//		ScoreEntry entry = new ScoreEntry ();
+//		entry.name = SetNamePlayer.PlayerName;
+//		entry.timeclear = TimeManage.curTime;
+//
+//		Leaderboard.Entries.Add (entry);
+	}
+
 
 	void Spawn ()
 	{
@@ -91,8 +122,7 @@ public class ManageEnemy : MonoBehaviour {
 
 	void CallBoss()
 	{
-		GameObject go  = Instantiate (enemy , BossPos.position, Quaternion.identity);
-		go.transform.localScale *= 2f; 
+		GameObject go  = Instantiate (enemy , BossPos.position, Quaternion.identity); 
 		go.gameObject.tag = "Boss";
 
 	}

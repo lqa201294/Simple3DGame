@@ -74,6 +74,7 @@ public class Healthplayer : MonoBehaviour {
 		if (col.tag == "angel") 
 		{
 			InvokeRepeating ("HPRegen", 0, 1);
+		
 		}
 
 	}
@@ -94,8 +95,13 @@ public class Healthplayer : MonoBehaviour {
 
 	void HPRegen()
 	{
-		if (curhealth < startHealth) {
+		if (curhealth < startHealth)
+		{
 			RecoverHealth (1);
+		}
+		else
+		{
+			RecoverHealth (0);
 		}
 	}
 

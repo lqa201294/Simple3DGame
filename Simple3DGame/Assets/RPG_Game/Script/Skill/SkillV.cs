@@ -38,7 +38,7 @@ public class SkillV : MonoBehaviour {
 		}
 
 
-		if (Input.GetKeyDown (KeyCode.V)) 
+		if (Input.GetKeyDown (KeyCode.V) && Time.timeScale == 1) 
 		{
 			if (cdtime <= 0 && manaCost < Player.GetComponent<ManaPlayer>().curMana) 
 			{

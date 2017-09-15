@@ -59,10 +59,12 @@ public class ManaPlayer : MonoBehaviour {
 
 	void ManaRegen()
 	{
-		if (curMana < maxMana) 
-		{
+		if (curMana < maxMana) {
 			ManaRecover (1);
 		}
-
+		else
+		{
+			ManaRecover (0);
+		}
 	}
 }
